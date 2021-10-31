@@ -2,7 +2,8 @@
 
 ## Adopted optimization
 
-* Relay
+* __Relay__  
+
 In the optimization task, we will focus on hardware-independent optimization based on passes in TVM relay, including constant folding, dead-code elimination and other passes on tensor calculation like transformation, scaling factor folding, etc. 
 	* Adopted passes on different levels
 		- Module Level Pass
@@ -12,20 +13,29 @@ In the optimization task, we will focus on hardware-independent optimization bas
 	* Customized self-defined pass
 	Due to a default of EliminateCommonSubexpr with reshape operator, the EliminateCommonSubexpr is customized with python decorator.
 
-* Auto-Scheduler (AutoTVM or Ansor)
-Except for handicraft optimizations by pass, TVM offers the possibility to tune the scheduler automatically. Since previous paper already told me that AutoTVM might even worsen the performance if we use CPU, here I will use AutoTVM and Ansor which claims to have better performance.
+* __Auto-Scheduler__ (Something not on graph-level, but I find the joint effect interesting to test)  
 
-* Tir
+Except for handicraft optimizations by pass, TVM offers the possibility to tune the scheduler automatically. Since `Ansor: Generating High-Performance Tensor Programs for Deep Learning` already told us that AutoTVM might even worsen the performance for BERT if we use CPU, here I will test AutoTVM and Ansor which claims to have better performance.
+
+* Tir  
+
 Little effort was done on Tir Transform, not to say on LLVM or CUDA, but it will be super interesting to work on that direction.
 
-* DAG visualization & benchmarking
+* Benchmarking  
 
-* Config
+	* PyTorch  
+	* Tensorflow  
+	* Single pass (FoldConstant/EliminateCommonSubexpr/Customized EliminateCommonSubexpr/RemoveUnusedFunctions/ToBasicBlockNormalForm/FuseOps/CombineParallelBatchMatmul/Sequential)  
+	* Auto-Scheduler (AutoTVM/Ansor)
+	* Auto-scheduler on graph-optimized BERT (CombineParallelBatchMatmul)
+
+* Config  
+
 The benchmark I have done was totally on GCP CPU instance due to a lack of ressource, and the demand of GPU will take two days for processing, but I strongly recommend to test it on GPU.
 
-My config:
-GCP n1-standard-8( 8 Intel Skylake vCPU, 30 GB memory)
-System: Ubuntu 16.04 LTS
+	* My config:
+	GCP n1-standard-8( 8 Intel Skylake vCPU, 30 GB memory)
+	System: Ubuntu 16.04 LTS
 
 * BERT tasks
 Here we focus on the inference tasks

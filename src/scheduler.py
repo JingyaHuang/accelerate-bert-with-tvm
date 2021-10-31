@@ -40,7 +40,7 @@ def auto_tvm_tune(tasks, log_filename, n_trial):
 def auto_scheduler_tune(tasks, task_weights, log_filename, n_trial):
 
     tuning_opt = auto_scheduler.TuningOptions(
-        num_measure_trials=n_trials,
+        num_measure_trials=n_trial,
         runner=auto_scheduler.LocalRunner(repeat=10, enable_cpu_cache_flush=True),
         measure_callbacks=[auto_scheduler.RecordToFile(log_filename)],
     )
