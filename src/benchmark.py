@@ -123,18 +123,18 @@ if mode=="pass":
 					 "CombineParallelBatchMatmul": apply_CombineParallelBatchMatmul, 
 					 "Sequential": apply_Sequential,
 					 }
-		new_mod = pass_dict[args.tvmpass](mod)
+		mod = pass_dict[args.tvmpass](mod)
 
 		# Clear compile engine
 		relay.backend.te_compiler.get().clear()
 
 		with tvm.transform.PassContext(opt_level=3):
 			# Output: a relay function
-		    graph, lib, params = relay.build(new_mod, target=target, target_host=target_host, params=params)
+		    graph, lib, params = relay.build(mod, target=target, target_host=target_host, params=params)
 
 		# Execute the portable graph on TVM
 		exe_graph(graph, lib, ctx, tt_a, st_a, params, args.repeat)
-		modGraph = visualize(new_mod['main'])
+		modGraph = visualize(mod['main'])
 		modGraph.render(filename=f'img/bert-{args.tvmpass}')
 	else:
 		print("########## Launch witout optimization ##########")
@@ -157,7 +157,7 @@ if mode=="pass":
 			log_filename = 'logs/autotvm-bert-tuning.stage1.log'
 			n_trial = args.n_trial
 			# Tune AutoTVM
-			auto_tvm_tune(tasks, log_filename)
+			auto_tvm_tune(tasks, log_filename, n_trial)
 			relay.backend.te_compiler.get().clear()
 
 			# Run tuned-tvm again
@@ -168,12 +168,11 @@ if mode=="pass":
 			                                     target_host=target_host,
 			                                     params=params)
 			exe_graph(graph, lib, ctx, tt_a, st_a, params, args.repeat)
-			modGraph = visualize(mod['main'])
-			modGraph.render(filename=f'img/bert-original')
+			# Compute dag
 
 		elif args.scheduler=="ANSOR":
 			# Tune Ansor
-			pass
+			tasks, task_weights = auto_scheduler.extract_tasks(mod["main"], params, target)
 	
 
 elif mode=="benchmark":
