@@ -31,17 +31,16 @@ from scheduler import auto_tvm_tune, auto_scheduler_tune
 # Label list of all possible passes
 pass_labels = ["FoldConstant", "EliminateCommonSubexpr", "CustomizedEliminateCommonSubexpr",
  		  		"RemoveUnusedFunctions", "ToBasicBlockNormalForm", "AlterOpLayout", "Sequential"]
-scheduler_labels = ["AutoTVM", "TunedAutoTVM", "ANSOR"]
 
 parser = argparse.ArgumentParser(description="BERT optimization based on graph compiler")
-parser.add_argument("--mode", type=str, default="benchmark", choices=["benchmark", "pass"],
-                    help="lauch benchmark or test sigle pass (default: benchmark)")
+parser.add_argument("--mode", type=str, default="pass", choices=["benchmark", "pass"],
+                    help="lauch benchmark or test sigle pass (default: pass)")
 parser.add_argument("--tvmpass", 
 					choices=[None]+pass_labels,
                     default=None,
                     help="choose pass for optimization (default: None)")
 parser.add_argument("--scheduler", 
-					choices=[None, "autoTVM", "ansor"],
+					choices=[None, "AutoTVM", "ANSOR"],
                     default=None,
                     help="choose scheduler for optimization (default: None)")
 parser.add_argument("--target", type=str, default="llvm", help="default: llvm for cpu")
@@ -127,6 +126,9 @@ if mode=="pass":
 		   
 	elif args.scheduler:
 		# Apply scheduler
+		if args.scheduler==""
+		# Tune AutoTVM
+		# Tune Ansor
 		pass
 	else:
 		print("########## Launch witout optimization ##########")
