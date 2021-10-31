@@ -160,7 +160,7 @@ if mode=="pass":
 			auto_tvm_tune(tasks, log_filename, n_trial)
 			relay.backend.te_compiler.get().clear()
 
-			# Run tuned-tvm again
+			# Compile with tuned-tvm
 			with tvm.autotvm.apply_history_best(log_filename):
 			    with tvm.transform.PassContext(opt_level=3):
 			        graph, lib, params = relay.build(mod,
@@ -168,12 +168,25 @@ if mode=="pass":
 			                                     target_host=target_host,
 			                                     params=params)
 			exe_graph(graph, lib, ctx, tt_a, st_a, params, args.repeat)
-			# Compute dag
 
 		elif args.scheduler=="ANSOR":
 			# Tune Ansor
+
 			tasks, task_weights = auto_scheduler.extract_tasks(mod["main"], params, target)
-	
+			log_filename = 'logs/ansor-bert-tuning.stage1.log'
+			n_trial = args.n_trial
+			# Tune Ansor
+			auto_scheduler_tune(tasks, task_weights, log_filename, n_trial)
+			relay.backend.te_compiler.get().clear()
+
+			# Compile with tuned-ansor again
+			with auto_scheduler.ApplyHistoryBest(log_filename):
+				with tvm.transform.PassContext(
+		                opt_level=3, config={"relay.backend.use_auto_scheduler": True}
+		            ):
+		                graph, lib, params = relay.build(mod, target=target, params=params)
+
+			exe_graph(graph, lib, ctx, tt_a, st_a, params, args.repeat)	
 
 elif mode=="benchmark":
 	print("##########Benchmark BERT starts##########")
@@ -216,29 +229,43 @@ elif mode=="benchmark":
 		modGraph = visualize(mod['main'])
 		modGraph.render(filename=f'img/bert-original')
 
-	print(mean_time_list)
+	all_labels = ['PyTorch'] + pass_labels + ["AutoTVM", "ANSOR"]
 
 	# With schedulers
-	# 0.0 AutoTVM without tuning
-	# 0.1 Tuned AutoTVM
+	# 0.0 AutoTVM 
+	tasks = tvm.autotvm.task.extract_from_program(mod["main"], target=target, params=params)
+	log_filename = 'logs/autotvm-bert-tuning.stage1.log'
+	n_trial = args.n_trial
+	# Tune AutoTVM
+	auto_tvm_tune(tasks, log_filename, n_trial)
+	relay.backend.te_compiler.get().clear()
+
+	# Compile with tuned-tvm
+	with tvm.autotvm.apply_history_best(log_filename):
+	    with tvm.transform.PassContext(opt_level=3):
+	        graph, lib, params = relay.build(mod,
+	                                     target=target,
+	                                     target_host=target_host,
+	                                     params=params)
+	mean_time = exe_graph(graph, lib, ctx, tt_a, st_a, params, args.repeat)
+	mean_time_list.append(mean_time)
 	# 1.0 Ansor
+	tasks, task_weights = auto_scheduler.extract_tasks(mod["main"], params, target)
+	log_filename = 'logs/ansor-bert-tuning.stage1.log'
+	n_trial = args.n_trial
+	# Tune Ansor
+	auto_scheduler_tune(tasks, task_weights, log_filename, n_trial)
+	relay.backend.te_compiler.get().clear()
 
-	# Visualization 
+	# Compile with tuned-ansor again
+	with auto_scheduler.ApplyHistoryBest(log_filename):
+		with tvm.transform.PassContext(
+                opt_level=3, config={"relay.backend.use_auto_scheduler": True}
+            ):
+                graph, lib, params = relay.build(mod, target=target, params=params)
 
-# Pass tests
-
-
-
-
-
-
-
-
-
-
-
-
-
+	mean_time = exe_graph(graph, lib, ctx, tt_a, st_a, params, args.repeat)
+	mean_time_list.append(mean_time)
 
 
 

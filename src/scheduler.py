@@ -14,7 +14,7 @@ def auto_tvm_tune(tasks, log_filename, n_trial):
         prefix = "[Task %2d/%2d] " %(i+1, len(tasks))
 
         # create tuner
-        tuner = tvm.autotvm.tuner.XGBTuner(tsk, loss_type='rank', feature_type='curve')
+        tuner = tvm.autotvm.tuner.XGBTuner(tsk, loss_type='rank', feature_type='curve')  # XGBTuner, GATuner, RandomTuner, GridSearchTuner
         if os.path.isfile(tmp_log_file):
             tuner.load_history(tvm.autotvm.record.load_from_file(tmp_log_file))
 
@@ -30,12 +30,14 @@ def auto_tvm_tune(tasks, log_filename, n_trial):
                 tvm.autotvm.callback.progress_bar(tsk_trial, prefix=prefix),
                 tvm.autotvm.callback.log_to_file(tmp_log_file)
             ])
+        # Compute dag
+        print(tsk.compute_dag)
 
     # pick best records to a cache file
     tvm.autotvm.record.pick_best(tmp_log_file, log_filename)
 
 # 2nd candidate: Auto-Scheduler
-def auto_scheduler_tune(tasks, log_filename, n_trial):
+def auto_scheduler_tune(tasks, task_weights, log_filename, n_trial):
 
     tuning_opt = auto_scheduler.TuningOptions(
         num_measure_trials=n_trials,
