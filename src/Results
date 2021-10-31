@@ -1,0 +1,24 @@
+# Results
+
+Original BERT:
+Mean inference time (std dev): 67.52 ms (3.82 ms)
+FoldConstant:
+Mean inference time (std dev): 66.64 ms (6.22 ms)
+EliminateCommonSubexpr:
+Mean inference time (std dev): 67.74 ms (0.70 ms)
+CustomizedEliminateCommonSubexpr:
+Mean inference time (std dev): 66.44 ms (0.78 ms)
+RemoveUnusedFunctions:
+Mean inference time (std dev): 66.84 ms (1.12 ms)
+ToBasicBlockNormalForm:
+Mean inference time (std dev): 67.37 ms (0.92 ms)
+CombineParallelBatchMatmul:
+Mean inference time (std dev): 66.24 ms (0.68 ms)
+Sequential:
+Mean inference time (std dev): 67.86 ms (1.47 ms)
+AutoTVM on original BERT:
+Mean inference time (std dev): 73.59 ms (1.67 ms)
+Ansor on original BERT
+Mean inference time (std dev): 61.66 ms (1.03 ms)
+Ansor on CombineParallelBatchMatmul BERT: 
+Mean inference time (std dev): 61.57 ms (1.01 ms)

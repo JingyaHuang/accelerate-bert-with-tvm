@@ -42,7 +42,7 @@ The benchmark I have done was totally on GCP CPU instance due to a lack of resso
 Here we focus on the inference tasks
 
 * Results
-
+<img src="./img/benchmark.png">
 
 
 
