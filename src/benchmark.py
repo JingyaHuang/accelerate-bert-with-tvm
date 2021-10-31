@@ -28,18 +28,22 @@ from utils import visualize
 from all_pass import *
 from scheduler import auto_tvm_tune, auto_scheduler_tune
 
+# Label list of all possible passes
+pass_labels = ["FoldConstant", "EliminateCommonSubexpr", "CustomizedEliminateCommonSubexpr",
+ 		  		"RemoveUnusedFunctions", "ToBasicBlockNormalForm", "AlterOpLayout", "Sequential"]
+scheduler_labels = ["AutoTVM", "TunedAutoTVM", "ANSOR"]
 
 parser = argparse.ArgumentParser(description="BERT optimization based on graph compiler")
 parser.add_argument("--mode", type=str, default="benchmark", choices=["benchmark", "pass"],
                     help="lauch benchmark or test sigle pass (default: benchmark)")
 parser.add_argument("--tvmpass", 
-					choices=["original_bert", "autoTVM", "ansor"],
-                    default="original_bert",
-                    help="choose pass or scheduler for optimization (default: original_bert)")
+					choices=[None]+pass_labels,
+                    default=None,
+                    help="choose pass for optimization (default: None)")
 parser.add_argument("--scheduler", 
 					choices=[None, "autoTVM", "ansor"],
                     default=None,
-                    help="choose auto-scheduler for optimization (default: None)")
+                    help="choose scheduler for optimization (default: None)")
 parser.add_argument("--target", type=str, default="llvm", help="default: llvm for cpu")
 parser.add_argument("--target_host", type=str, default="llvm", help="default: llvm for cpu")
 parser.add_argument("--n_trial", type=int, default=30, help="number of trial for tuning (default: 30)")
@@ -88,7 +92,63 @@ output = model(tokens_tensor, segments_tensors)
 ######################################################################################
 # Graph optimization
 mode = args.mode
-if mode=="benchmark":
+# Relay Build Config
+target = args.target
+target_host = args.target_host
+ctx = tvm.cpu(0)
+tt_a = tvm.nd.array(tokens_tensor.numpy(), ctx)
+st_a = tvm.nd.array(segments_tensors.numpy(), ctx)
+
+# Relay build
+if mode=="pass":
+	mod, params = pytorch_to_relay(traced_model)
+	if args.tvmpass:
+		# Apply TVM passes 
+		pass_dict = {"FoldConstant": apply_FoldConstant, 
+					 "EliminateCommonSubexpr": apply_EliminateCommonSubexpr, 
+					 "CustomizedEliminateCommonSubexpr": apply_EliminateCommonSubexpr_bis,
+					 "RemoveUnusedFunctions": apply_RemoveUnusedFunctions, 
+					 "ToBasicBlockNormalForm": apply_ToBasicBlockNormalForm, 
+					 "AlterOpLayout": apply_AlterOpLayout, 
+					 "Sequential": apply_Sequential,
+					 }
+		new_mod = pass_dict[args.tvmpass](mod)
+
+		with tvm.transform.PassContext(opt_level=3):
+			# Output: a relay function
+		    graph, lib, params = relay.build(new_mod, target=target, target_host=target_host, params=params)
+
+		# Execute the portable graph on TVM
+		module = graph_runtime.create(graph, lib, ctx)
+		module.set_input("input_ids", tt_a)
+		module.set_input("attention_mask", st_a)
+		module.set_input(**params)
+		# Evaluate inference time cost...
+		ftimer = module.module.time_evaluator("run", ctx, number=1, repeat=args.repeat)
+		prof_res = np.array(ftimer().results) * 1000 # convert to millisecond
+		print("Mean inference time (std dev): %.2f ms (%.2f ms)" %(np.mean(prof_res), np.std(prof_res)))
+		   
+	elif args.scheduler:
+		# Apply scheduler
+		pass
+	else:
+		# Use orginal relay from pytorch
+		with tvm.transform.PassContext(opt_level=3):
+			# Output: a relay function
+		    graph, lib, params = relay.build(mod, target=target, target_host=target_host, params=params)
+
+		# Execute the portable graph on TVM
+		module = graph_runtime.create(graph, lib, ctx)
+		module.set_input("input_ids", tt_a)
+		module.set_input("attention_mask", st_a)
+		module.set_input(**params)
+		# Evaluate inference time cost...
+		ftimer = module.module.time_evaluator("run", ctx, number=1, repeat=args.repeat)
+		prof_res = np.array(ftimer().results) * 1000 # convert to millisecond
+		print("Mean inference time (std dev): %.2f ms (%.2f ms)" %(np.mean(prof_res), np.std(prof_res)))
+
+
+elif mode=="benchmark":
 	# Benchmark(General)
 	mod, params = pytorch_to_relay(traced_model)
 	# FoldConstant
@@ -109,14 +169,7 @@ if mode=="benchmark":
 	mod_seq = apply_Sequential(mod)
 	mod_list = [mod, mod_fc, mod_cse, mod_cse_bis, mod_ruf, mod_tbbnf, mod_aol, mod_seq]  # Drop mod_fo for FuseOps due to running out of memory
 
-	# Relay Build (compile the graph to llvm target with given input specification)
-	target = args.target
-	target_host = args.target_host
-	ctx = tvm.cpu(0)
-	tt_a = tvm.nd.array(tokens_tensor.numpy(), ctx)
-	st_a = tvm.nd.array(segments_tensors.numpy(), ctx)
-
-	# lists of graph, lib and params
+	# lists of labels, graph and avg. latency time
 	graph_list = []
 	mean_time = []
 
@@ -145,9 +198,6 @@ if mode=="benchmark":
 	# 1.0 Ansor
 
 	# Visualization 
-	
-
-
 
 # Pass tests
 
