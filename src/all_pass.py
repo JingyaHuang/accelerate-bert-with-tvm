@@ -69,13 +69,13 @@ def apply_Sequential(mod):
 	seq = tvm.transform.Sequential(
 	    [
 	        relay.transform.FoldConstant(),
-	        relay.transform.RemoveUnusedFunctions(),
+	        # relay.transform.RemoveUnusedFunctions(),
+	        # tvm.relay.transform.CombineParallelBatchMatmul(),
 	        ShapeConstDedup(mod),
 	        relay.transform.EliminateCommonSubexpr(),
-	        relay.transform.FuseOps(fuse_opt_level=2),
-	        relay.transform.ToBasicBlockNormalForm(),
-	        tvm.relay.transform.AlterOpLayout(),
-	        tvm.relay.transform.CombineParallelBatchMatmul(),
+	        # relay.transform.FuseOps(fuse_opt_level=2),
+	        # relay.transform.ToBasicBlockNormalForm(),
+	        # tvm.relay.transform.AlterOpLayout(),
 	    ]
 	)
 	with tvm.transform.PassContext(opt_level=3, disabled_pass=["FuseOps", "AlterOpLayout"]):
