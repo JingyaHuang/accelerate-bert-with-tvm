@@ -4,7 +4,7 @@ import argparse
 
 import tvm
 from tvm import relay, auto_scheduler
-from utils import get_network, make_network_key
+# from utils import get_network, make_network_key
 
 
 # 1st candidate: AutoTVM
