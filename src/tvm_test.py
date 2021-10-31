@@ -180,7 +180,7 @@ def do_tune(tasks, log_filename):
 
 # Now ! TVM optimization passes !
 # ---- 0. FoldConstant / EliminateCommonSubexpr
-# new_mod = tvm.relay.transform.EliminateCommonSubexpr()(mod_bert)
+new_mod = tvm.relay.transform.EliminateCommonSubexpr()(mod_bert)
 # new_mod = tvm.relay.transform.FoldConstant()(mod_bert)
 # new_mod = tvm.relay.transform.FuseOps(fuse_opt_level=2)(mod_bert)  # Out of memory
 # new_mod = tvm.relay.transform.RemoveUnusedFunctions()(mod_bert)
