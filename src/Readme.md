@@ -2,7 +2,7 @@
 
 ## Inspiration
 
-![TVM full structure](./img/tvm.jpg){ width=50% }
+<img src="./img/tvm.jpg" width=50% height=50%>
 
 ## Adopted optimization
 
