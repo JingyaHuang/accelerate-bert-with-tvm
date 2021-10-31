@@ -94,6 +94,18 @@ ctx = tvm.cpu(0)
 tt_a = tvm.nd.array(tokens_tensor.numpy(), ctx)
 st_a = tvm.nd.array(segments_tensors.numpy(), ctx)
 
+# Execute the portable graph on TVM
+def exe_graph(graph, lib, ctx, tt_a, st_a, params, repeat):
+	module = graph_runtime.create(graph, lib, ctx)
+	module.set_input("input_ids", tt_a)
+	module.set_input("attention_mask", st_a)
+	module.set_input(**params)
+	# Evaluate inference time cost...
+	ftimer = module.module.time_evaluator("run", ctx, number=1, repeat=repeat)
+	prof_res = np.array(ftimer().results) * 1000 # convert to millisecond
+
+	print("Mean inference time (std dev): %.2f ms (%.2f ms)" %(np.mean(prof_res), np.std(prof_res)))
+
 # Relay build
 if mode=="pass":
 	mod, params = pytorch_to_relay(traced_model)
@@ -115,20 +127,30 @@ if mode=="pass":
 		    graph, lib, params = relay.build(new_mod, target=target, target_host=target_host, params=params)
 
 		# Execute the portable graph on TVM
-		module = graph_runtime.create(graph, lib, ctx)
-		module.set_input("input_ids", tt_a)
-		module.set_input("attention_mask", st_a)
-		module.set_input(**params)
-		# Evaluate inference time cost...
-		ftimer = module.module.time_evaluator("run", ctx, number=1, repeat=args.repeat)
-		prof_res = np.array(ftimer().results) * 1000 # convert to millisecond
-		print("Mean inference time (std dev): %.2f ms (%.2f ms)" %(np.mean(prof_res), np.std(prof_res)))
+		exe_graph(graph, lib, ctx, tt_a, st_a, params, args.repeat)
+		modGraph = visualize(new_mod['main'])
+		modGraph.render(filename=f'img/bert-{args.tvmpass}')
 		   
 	elif args.scheduler:
 		print("##########Benchmark BERT with scheduler: %s ##########" % args.scheduler)
 		# Apply scheduler
 		if args.scheduler=="AutoTVM":
+			# Create task
+			tasks = tvm.autotvm.task.extract_from_program(mod["main"], target=target, params=params)
+			log_filename = 'logs/autotvm-bert-tuning.stage1.log'
+			n_trial = args.n_trial
 			# Tune AutoTVM
+			auto_tvm_tune(tasks, log_filename)
+			relay.backend.te_compiler.get().clear()
+
+			# Run tuned-tvm again
+			with tvm.autotvm.apply_history_best(log_filename):
+			    with tvm.transform.PassContext(opt_level=3):
+			        graph, lib, params = relay.build(mod,
+			                                     target=target,
+			                                     target_host=target_host,
+			                                     params=params)
+			module = graph_runtime.create(graph, lib, ctx)
 			pass
 		elif args.scheduler=="ANSOR":
 			# Tune Ansor
@@ -141,15 +163,9 @@ if mode=="pass":
 		    graph, lib, params = relay.build(mod, target=target, target_host=target_host, params=params)
 
 		# Execute the portable graph on TVM
-		module = graph_runtime.create(graph, lib, ctx)
-		module.set_input("input_ids", tt_a)
-		module.set_input("attention_mask", st_a)
-		module.set_input(**params)
-		# Evaluate inference time cost...
-		ftimer = module.module.time_evaluator("run", ctx, number=1, repeat=args.repeat)
-		prof_res = np.array(ftimer().results) * 1000 # convert to millisecond
-		print("Mean inference time (std dev): %.2f ms (%.2f ms)" %(np.mean(prof_res), np.std(prof_res)))
-
+		exe_graph(graph, lib, ctx, tt_a, st_a, params, args.repeat)
+		modGraph = visualize(mod['main'])
+		modGraph.render(filename=f'img/bert-original')
 
 elif mode=="benchmark":
 	print("##########Benchmark BERT starts##########")
