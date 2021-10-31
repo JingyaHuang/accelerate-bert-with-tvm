@@ -259,11 +259,11 @@ elif mode=="benchmark":
 
 	# Compile with tuned-ansor again
 	with auto_scheduler.ApplyHistoryBest(log_filename):
-		with tvm.transform.PassContext(
-                opt_level=3, config={"relay.backend.use_auto_scheduler": True}
-            ):
-                graph, lib, params = relay.build(mod, target=target, params=params)
-
+	    with tvm.transform.PassContext(opt_level=3, config={"relay.backend.use_auto_scheduler": True}):
+	        graph, lib, params = relay.build(mod,
+	                                     target=target,
+	                                     target_host=target_host,
+	                                     params=params)
 	mean_time = exe_graph(graph, lib, ctx, tt_a, st_a, params, args.repeat)
 	mean_time_list.append(mean_time)
 
