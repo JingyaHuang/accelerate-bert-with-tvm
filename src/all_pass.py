@@ -74,10 +74,11 @@ def apply_Sequential(mod):
 	        relay.transform.EliminateCommonSubexpr(),
 	        relay.transform.FuseOps(fuse_opt_level=2),
 	        relay.transform.ToBasicBlockNormalForm(),
-	        tvm.relay.transform.AlterOpLayout()
+	        tvm.relay.transform.AlterOpLayout(),
+	        tvm.relay.transform.CombineParallelBatchMatmul()(new_mod),
 	    ]
 	)
-	with tvm.transform.PassContext(opt_level=3, disabled_pass=["FuseOps"]):
+	with tvm.transform.PassContext(opt_level=3, disabled_pass=["FuseOps", "AlterOpLayout"]):
 		new_mod = seq(mod)
 
 	return new_mod
