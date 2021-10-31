@@ -70,7 +70,7 @@ def apply_Sequential(mod):
 	    [
 	        relay.transform.FoldConstant(),
 	        relay.transform.RemoveUnusedFunctions(),
-	        ShapeConstDedup(),
+	        ShapeConstDedup(mod),
 	        relay.transform.EliminateCommonSubexpr(),
 	        relay.transform.FuseOps(fuse_opt_level=2),
 	        relay.transform.ToBasicBlockNormalForm(),
