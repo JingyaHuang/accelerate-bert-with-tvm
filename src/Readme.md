@@ -2,7 +2,7 @@
 
 ## Inspiration
 
-![TVM full structure](./img/tvm.jpg)
+![TVM full structure](./img/tvm.jpg){ width=50% }
 
 ## Adopted optimization
 
