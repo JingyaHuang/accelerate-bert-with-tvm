@@ -50,11 +50,7 @@ parser.add_argument("--n_trial", type=int, default=30, help="number of trial for
 parser.add_argument("--repeat", type=int, default=100, help="repeat times of inference (default: 30)")
 
 args = parser.parse_args()
-
-if args.mode=="benchmark":
-	print("##########Benchmark BERT starts##########")
-elif args.mode=="pass":
-	print("##########Benchmark BERT with pass: %s ##########" % args.tvmpass)
+	
 
 ######################################################################################
 # Load pretrained model and its tokenizer
@@ -103,6 +99,7 @@ st_a = tvm.nd.array(segments_tensors.numpy(), ctx)
 if mode=="pass":
 	mod, params = pytorch_to_relay(traced_model)
 	if args.tvmpass:
+		print("##########Benchmark BERT with pass: %s ##########" % args.tvmpass)
 		# Apply TVM passes 
 		pass_dict = {"FoldConstant": apply_FoldConstant, 
 					 "EliminateCommonSubexpr": apply_EliminateCommonSubexpr, 
@@ -132,6 +129,7 @@ if mode=="pass":
 		# Apply scheduler
 		pass
 	else:
+		print("########## Launch witout optimization ##########")
 		# Use orginal relay from pytorch
 		with tvm.transform.PassContext(opt_level=3):
 			# Output: a relay function
@@ -149,6 +147,7 @@ if mode=="pass":
 
 
 elif mode=="benchmark":
+	print("##########Benchmark BERT starts##########")
 	# Benchmark(General)
 	mod, params = pytorch_to_relay(traced_model)
 	# FoldConstant
