@@ -59,9 +59,9 @@ def apply_FuseOps(mod):  # Out of memory
 	new_mod = tvm.relay.transform.FuseOps(fuse_opt_level=2)(mod) 
 	return new_mod
 
-# 6. AlterOpLayout (Adapt to the hardware)
-def apply_AlterOpLayout(mod):  # Out of memory
-	new_mod = tvm.relay.transform.AlterOpLayout()(mod) 
+# 6. CombineParallelBatchMatmul
+def apply_CombineParallelBatchMatmul(mod):
+	new_mod = tvm.relay.transform.CombineParallelBatchMatmul()(mod) 
 	return new_mod
 
 # 7. Sequential
