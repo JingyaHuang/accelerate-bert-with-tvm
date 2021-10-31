@@ -30,7 +30,7 @@ from scheduler import auto_tvm_tune, auto_scheduler_tune
 
 
 parser = argparse.ArgumentParser(description="BERT optimization based on graph compiler")
-parser.add_argument("--mode", type=str, default="benchmark", choices=["benchmark", "pass"]
+parser.add_argument("--mode", type=str, default="benchmark", choices=["benchmark", "pass"],
                     help="lauch benchmark or test sigle pass (default: benchmark)")
 parser.add_argument("--tvmpass", 
 					choices=["original_bert", "autoTVM", "ansor"],
