@@ -137,8 +137,12 @@ if mode=="benchmark":
 		print("Mean inference time (std dev): %.2f ms (%.2f ms)" %(np.mean(prof_res), np.std(prof_res)))
 		mean_time.append(np.mean(prof_res))
 
+	# With schedulers
+	# 0.0 AutoTVM without tuning
+	# 0.1 Tuned AutoTVM
+	# 1.0 Ansor
 
-	# With scheduler
+	# Visualization 
 	
 
 
