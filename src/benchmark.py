@@ -125,11 +125,14 @@ if mode=="pass":
 		print("Mean inference time (std dev): %.2f ms (%.2f ms)" %(np.mean(prof_res), np.std(prof_res)))
 		   
 	elif args.scheduler:
+		print("##########Benchmark BERT with scheduler: %s ##########" % args.scheduler)
 		# Apply scheduler
-		if args.scheduler==""
-		# Tune AutoTVM
-		# Tune Ansor
-		pass
+		if args.scheduler=="AutoTVM":
+			# Tune AutoTVM
+			pass
+		elif args.scheduler=="ANSOR":
+			# Tune Ansor
+			pass
 	else:
 		print("########## Launch witout optimization ##########")
 		# Use orginal relay from pytorch
