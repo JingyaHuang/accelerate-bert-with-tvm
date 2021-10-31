@@ -1,0 +1,2236 @@
+digraph {
+	node [shape=box]
+	0 [label="input_ids: Tensor[(1, 14), int64]" shape=ellipse]
+	1 [label="attention_mask: Tensor[(1, 14), int64]" shape=ellipse]
+	2 [label="embeddings.word_embeddings.weight: Tensor[(30522, 768), float32]" shape=ellipse]
+	3 [label="embeddings.token_type_embeddings.weight: Tensor[(2, 768), float32]" shape=ellipse]
+	4 [label="embeddings.token_type_ids: Tensor[(1, 512), int64]" shape=ellipse]
+	5 [label="embeddings.position_embeddings.weight: Tensor[(512, 768), float32]" shape=ellipse]
+	6 [label="embeddings.position_ids: Tensor[(1, 512), int64]" shape=ellipse]
+	7 [label="embeddings.LayerNorm.weight: Tensor[(768,), float32]" shape=ellipse]
+	8 [label="embeddings.LayerNorm.bias: Tensor[(768,), float32]" shape=ellipse]
+	9 [label="encoder.layer.0.attention.self.query.weight: Tensor[(768, 768), float32]" shape=ellipse]
+	10 [label="encoder.layer.0.attention.self.query.bias: Tensor[(768,), float32]" shape=ellipse]
+	11 [label="encoder.layer.0.attention.self.key.weight: Tensor[(768, 768), float32]" shape=ellipse]
+	12 [label="encoder.layer.0.attention.self.key.bias: Tensor[(768,), float32]" shape=ellipse]
+	13 [label="encoder.layer.0.attention.self.value.weight: Tensor[(768, 768), float32]" shape=ellipse]
+	14 [label="encoder.layer.0.attention.self.value.bias: Tensor[(768,), float32]" shape=ellipse]
+	15 [label="encoder.layer.0.attention.output.dense.weight: Tensor[(768, 768), float32]" shape=ellipse]
+	16 [label="encoder.layer.0.attention.output.dense.bias: Tensor[(768,), float32]" shape=ellipse]
+	17 [label="encoder.layer.0.attention.output.LayerNorm.weight: Tensor[(768,), float32]" shape=ellipse]
+	18 [label="encoder.layer.0.attention.output.LayerNorm.bias: Tensor[(768,), float32]" shape=ellipse]
+	19 [label="encoder.layer.0.intermediate.dense.weight: Tensor[(3072, 768), float32]" shape=ellipse]
+	20 [label="encoder.layer.0.intermediate.dense.bias: Tensor[(3072,), float32]" shape=ellipse]
+	21 [label="encoder.layer.0.output.dense.weight: Tensor[(768, 3072), float32]" shape=ellipse]
+	22 [label="encoder.layer.0.output.dense.bias: Tensor[(768,), float32]" shape=ellipse]
+	23 [label="encoder.layer.0.output.LayerNorm.weight: Tensor[(768,), float32]" shape=ellipse]
+	24 [label="encoder.layer.0.output.LayerNorm.bias: Tensor[(768,), float32]" shape=ellipse]
+	25 [label="encoder.layer.1.attention.self.query.weight: Tensor[(768, 768), float32]" shape=ellipse]
+	26 [label="encoder.layer.1.attention.self.query.bias: Tensor[(768,), float32]" shape=ellipse]
+	27 [label="encoder.layer.1.attention.self.key.weight: Tensor[(768, 768), float32]" shape=ellipse]
+	28 [label="encoder.layer.1.attention.self.key.bias: Tensor[(768,), float32]" shape=ellipse]
+	29 [label="encoder.layer.1.attention.self.value.weight: Tensor[(768, 768), float32]" shape=ellipse]
+	30 [label="encoder.layer.1.attention.self.value.bias: Tensor[(768,), float32]" shape=ellipse]
+	31 [label="encoder.layer.1.attention.output.dense.weight: Tensor[(768, 768), float32]" shape=ellipse]
+	32 [label="encoder.layer.1.attention.output.dense.bias: Tensor[(768,), float32]" shape=ellipse]
+	33 [label="encoder.layer.1.attention.output.LayerNorm.weight: Tensor[(768,), float32]" shape=ellipse]
+	34 [label="encoder.layer.1.attention.output.LayerNorm.bias: Tensor[(768,), float32]" shape=ellipse]
+	35 [label="encoder.layer.1.intermediate.dense.weight: Tensor[(3072, 768), float32]" shape=ellipse]
+	36 [label="encoder.layer.1.intermediate.dense.bias: Tensor[(3072,), float32]" shape=ellipse]
+	37 [label="encoder.layer.1.output.dense.weight: Tensor[(768, 3072), float32]" shape=ellipse]
+	38 [label="encoder.layer.1.output.dense.bias: Tensor[(768,), float32]" shape=ellipse]
+	39 [label="encoder.layer.1.output.LayerNorm.weight: Tensor[(768,), float32]" shape=ellipse]
+	40 [label="encoder.layer.1.output.LayerNorm.bias: Tensor[(768,), float32]" shape=ellipse]
+	41 [label="encoder.layer.2.attention.self.query.weight: Tensor[(768, 768), float32]" shape=ellipse]
+	42 [label="encoder.layer.2.attention.self.query.bias: Tensor[(768,), float32]" shape=ellipse]
+	43 [label="encoder.layer.2.attention.self.key.weight: Tensor[(768, 768), float32]" shape=ellipse]
+	44 [label="encoder.layer.2.attention.self.key.bias: Tensor[(768,), float32]" shape=ellipse]
+	45 [label="encoder.layer.2.attention.self.value.weight: Tensor[(768, 768), float32]" shape=ellipse]
+	46 [label="encoder.layer.2.attention.self.value.bias: Tensor[(768,), float32]" shape=ellipse]
+	47 [label="encoder.layer.2.attention.output.dense.weight: Tensor[(768, 768), float32]" shape=ellipse]
+	48 [label="encoder.layer.2.attention.output.dense.bias: Tensor[(768,), float32]" shape=ellipse]
+	49 [label="encoder.layer.2.attention.output.LayerNorm.weight: Tensor[(768,), float32]" shape=ellipse]
+	50 [label="encoder.layer.2.attention.output.LayerNorm.bias: Tensor[(768,), float32]" shape=ellipse]
+	51 [label="encoder.layer.2.intermediate.dense.weight: Tensor[(3072, 768), float32]" shape=ellipse]
+	52 [label="encoder.layer.2.intermediate.dense.bias: Tensor[(3072,), float32]" shape=ellipse]
+	53 [label="encoder.layer.2.output.dense.weight: Tensor[(768, 3072), float32]" shape=ellipse]
+	54 [label="encoder.layer.2.output.dense.bias: Tensor[(768,), float32]" shape=ellipse]
+	55 [label="encoder.layer.2.output.LayerNorm.weight: Tensor[(768,), float32]" shape=ellipse]
+	56 [label="encoder.layer.2.output.LayerNorm.bias: Tensor[(768,), float32]" shape=ellipse]
+	57 [label="encoder.layer.3.attention.self.query.weight: Tensor[(768, 768), float32]" shape=ellipse]
+	58 [label="encoder.layer.3.attention.self.query.bias: Tensor[(768,), float32]" shape=ellipse]
+	59 [label="encoder.layer.3.attention.self.key.weight: Tensor[(768, 768), float32]" shape=ellipse]
+	60 [label="encoder.layer.3.attention.self.key.bias: Tensor[(768,), float32]" shape=ellipse]
+	61 [label="encoder.layer.3.attention.self.value.weight: Tensor[(768, 768), float32]" shape=ellipse]
+	62 [label="encoder.layer.3.attention.self.value.bias: Tensor[(768,), float32]" shape=ellipse]
+	63 [label="encoder.layer.3.attention.output.dense.weight: Tensor[(768, 768), float32]" shape=ellipse]
+	64 [label="encoder.layer.3.attention.output.dense.bias: Tensor[(768,), float32]" shape=ellipse]
+	65 [label="encoder.layer.3.attention.output.LayerNorm.weight: Tensor[(768,), float32]" shape=ellipse]
+	66 [label="encoder.layer.3.attention.output.LayerNorm.bias: Tensor[(768,), float32]" shape=ellipse]
+	67 [label="encoder.layer.3.intermediate.dense.weight: Tensor[(3072, 768), float32]" shape=ellipse]
+	68 [label="encoder.layer.3.intermediate.dense.bias: Tensor[(3072,), float32]" shape=ellipse]
+	69 [label="encoder.layer.3.output.dense.weight: Tensor[(768, 3072), float32]" shape=ellipse]
+	70 [label="encoder.layer.3.output.dense.bias: Tensor[(768,), float32]" shape=ellipse]
+	71 [label="encoder.layer.3.output.LayerNorm.weight: Tensor[(768,), float32]" shape=ellipse]
+	72 [label="encoder.layer.3.output.LayerNorm.bias: Tensor[(768,), float32]" shape=ellipse]
+	73 [label="encoder.layer.4.attention.self.query.weight: Tensor[(768, 768), float32]" shape=ellipse]
+	74 [label="encoder.layer.4.attention.self.query.bias: Tensor[(768,), float32]" shape=ellipse]
+	75 [label="encoder.layer.4.attention.self.key.weight: Tensor[(768, 768), float32]" shape=ellipse]
+	76 [label="encoder.layer.4.attention.self.key.bias: Tensor[(768,), float32]" shape=ellipse]
+	77 [label="encoder.layer.4.attention.self.value.weight: Tensor[(768, 768), float32]" shape=ellipse]
+	78 [label="encoder.layer.4.attention.self.value.bias: Tensor[(768,), float32]" shape=ellipse]
+	79 [label="encoder.layer.4.attention.output.dense.weight: Tensor[(768, 768), float32]" shape=ellipse]
+	80 [label="encoder.layer.4.attention.output.dense.bias: Tensor[(768,), float32]" shape=ellipse]
+	81 [label="encoder.layer.4.attention.output.LayerNorm.weight: Tensor[(768,), float32]" shape=ellipse]
+	82 [label="encoder.layer.4.attention.output.LayerNorm.bias: Tensor[(768,), float32]" shape=ellipse]
+	83 [label="encoder.layer.4.intermediate.dense.weight: Tensor[(3072, 768), float32]" shape=ellipse]
+	84 [label="encoder.layer.4.intermediate.dense.bias: Tensor[(3072,), float32]" shape=ellipse]
+	85 [label="encoder.layer.4.output.dense.weight: Tensor[(768, 3072), float32]" shape=ellipse]
+	86 [label="encoder.layer.4.output.dense.bias: Tensor[(768,), float32]" shape=ellipse]
+	87 [label="encoder.layer.4.output.LayerNorm.weight: Tensor[(768,), float32]" shape=ellipse]
+	88 [label="encoder.layer.4.output.LayerNorm.bias: Tensor[(768,), float32]" shape=ellipse]
+	89 [label="encoder.layer.5.attention.self.query.weight: Tensor[(768, 768), float32]" shape=ellipse]
+	90 [label="encoder.layer.5.attention.self.query.bias: Tensor[(768,), float32]" shape=ellipse]
+	91 [label="encoder.layer.5.attention.self.key.weight: Tensor[(768, 768), float32]" shape=ellipse]
+	92 [label="encoder.layer.5.attention.self.key.bias: Tensor[(768,), float32]" shape=ellipse]
+	93 [label="encoder.layer.5.attention.self.value.weight: Tensor[(768, 768), float32]" shape=ellipse]
+	94 [label="encoder.layer.5.attention.self.value.bias: Tensor[(768,), float32]" shape=ellipse]
+	95 [label="encoder.layer.5.attention.output.dense.weight: Tensor[(768, 768), float32]" shape=ellipse]
+	96 [label="encoder.layer.5.attention.output.dense.bias: Tensor[(768,), float32]" shape=ellipse]
+	97 [label="encoder.layer.5.attention.output.LayerNorm.weight: Tensor[(768,), float32]" shape=ellipse]
+	98 [label="encoder.layer.5.attention.output.LayerNorm.bias: Tensor[(768,), float32]" shape=ellipse]
+	99 [label="encoder.layer.5.intermediate.dense.weight: Tensor[(3072, 768), float32]" shape=ellipse]
+	100 [label="encoder.layer.5.intermediate.dense.bias: Tensor[(3072,), float32]" shape=ellipse]
+	101 [label="encoder.layer.5.output.dense.weight: Tensor[(768, 3072), float32]" shape=ellipse]
+	102 [label="encoder.layer.5.output.dense.bias: Tensor[(768,), float32]" shape=ellipse]
+	103 [label="encoder.layer.5.output.LayerNorm.weight: Tensor[(768,), float32]" shape=ellipse]
+	104 [label="encoder.layer.5.output.LayerNorm.bias: Tensor[(768,), float32]" shape=ellipse]
+	105 [label="encoder.layer.6.attention.self.query.weight: Tensor[(768, 768), float32]" shape=ellipse]
+	106 [label="encoder.layer.6.attention.self.query.bias: Tensor[(768,), float32]" shape=ellipse]
+	107 [label="encoder.layer.6.attention.self.key.weight: Tensor[(768, 768), float32]" shape=ellipse]
+	108 [label="encoder.layer.6.attention.self.key.bias: Tensor[(768,), float32]" shape=ellipse]
+	109 [label="encoder.layer.6.attention.self.value.weight: Tensor[(768, 768), float32]" shape=ellipse]
+	110 [label="encoder.layer.6.attention.self.value.bias: Tensor[(768,), float32]" shape=ellipse]
+	111 [label="encoder.layer.6.attention.output.dense.weight: Tensor[(768, 768), float32]" shape=ellipse]
+	112 [label="encoder.layer.6.attention.output.dense.bias: Tensor[(768,), float32]" shape=ellipse]
+	113 [label="encoder.layer.6.attention.output.LayerNorm.weight: Tensor[(768,), float32]" shape=ellipse]
+	114 [label="encoder.layer.6.attention.output.LayerNorm.bias: Tensor[(768,), float32]" shape=ellipse]
+	115 [label="encoder.layer.6.intermediate.dense.weight: Tensor[(3072, 768), float32]" shape=ellipse]
+	116 [label="encoder.layer.6.intermediate.dense.bias: Tensor[(3072,), float32]" shape=ellipse]
+	117 [label="encoder.layer.6.output.dense.weight: Tensor[(768, 3072), float32]" shape=ellipse]
+	118 [label="encoder.layer.6.output.dense.bias: Tensor[(768,), float32]" shape=ellipse]
+	119 [label="encoder.layer.6.output.LayerNorm.weight: Tensor[(768,), float32]" shape=ellipse]
+	120 [label="encoder.layer.6.output.LayerNorm.bias: Tensor[(768,), float32]" shape=ellipse]
+	121 [label="encoder.layer.7.attention.self.query.weight: Tensor[(768, 768), float32]" shape=ellipse]
+	122 [label="encoder.layer.7.attention.self.query.bias: Tensor[(768,), float32]" shape=ellipse]
+	123 [label="encoder.layer.7.attention.self.key.weight: Tensor[(768, 768), float32]" shape=ellipse]
+	124 [label="encoder.layer.7.attention.self.key.bias: Tensor[(768,), float32]" shape=ellipse]
+	125 [label="encoder.layer.7.attention.self.value.weight: Tensor[(768, 768), float32]" shape=ellipse]
+	126 [label="encoder.layer.7.attention.self.value.bias: Tensor[(768,), float32]" shape=ellipse]
+	127 [label="encoder.layer.7.attention.output.dense.weight: Tensor[(768, 768), float32]" shape=ellipse]
+	128 [label="encoder.layer.7.attention.output.dense.bias: Tensor[(768,), float32]" shape=ellipse]
+	129 [label="encoder.layer.7.attention.output.LayerNorm.weight: Tensor[(768,), float32]" shape=ellipse]
+	130 [label="encoder.layer.7.attention.output.LayerNorm.bias: Tensor[(768,), float32]" shape=ellipse]
+	131 [label="encoder.layer.7.intermediate.dense.weight: Tensor[(3072, 768), float32]" shape=ellipse]
+	132 [label="encoder.layer.7.intermediate.dense.bias: Tensor[(3072,), float32]" shape=ellipse]
+	133 [label="encoder.layer.7.output.dense.weight: Tensor[(768, 3072), float32]" shape=ellipse]
+	134 [label="encoder.layer.7.output.dense.bias: Tensor[(768,), float32]" shape=ellipse]
+	135 [label="encoder.layer.7.output.LayerNorm.weight: Tensor[(768,), float32]" shape=ellipse]
+	136 [label="encoder.layer.7.output.LayerNorm.bias: Tensor[(768,), float32]" shape=ellipse]
+	137 [label="encoder.layer.8.attention.self.query.weight: Tensor[(768, 768), float32]" shape=ellipse]
+	138 [label="encoder.layer.8.attention.self.query.bias: Tensor[(768,), float32]" shape=ellipse]
+	139 [label="encoder.layer.8.attention.self.key.weight: Tensor[(768, 768), float32]" shape=ellipse]
+	140 [label="encoder.layer.8.attention.self.key.bias: Tensor[(768,), float32]" shape=ellipse]
+	141 [label="encoder.layer.8.attention.self.value.weight: Tensor[(768, 768), float32]" shape=ellipse]
+	142 [label="encoder.layer.8.attention.self.value.bias: Tensor[(768,), float32]" shape=ellipse]
+	143 [label="encoder.layer.8.attention.output.dense.weight: Tensor[(768, 768), float32]" shape=ellipse]
+	144 [label="encoder.layer.8.attention.output.dense.bias: Tensor[(768,), float32]" shape=ellipse]
+	145 [label="encoder.layer.8.attention.output.LayerNorm.weight: Tensor[(768,), float32]" shape=ellipse]
+	146 [label="encoder.layer.8.attention.output.LayerNorm.bias: Tensor[(768,), float32]" shape=ellipse]
+	147 [label="encoder.layer.8.intermediate.dense.weight: Tensor[(3072, 768), float32]" shape=ellipse]
+	148 [label="encoder.layer.8.intermediate.dense.bias: Tensor[(3072,), float32]" shape=ellipse]
+	149 [label="encoder.layer.8.output.dense.weight: Tensor[(768, 3072), float32]" shape=ellipse]
+	150 [label="encoder.layer.8.output.dense.bias: Tensor[(768,), float32]" shape=ellipse]
+	151 [label="encoder.layer.8.output.LayerNorm.weight: Tensor[(768,), float32]" shape=ellipse]
+	152 [label="encoder.layer.8.output.LayerNorm.bias: Tensor[(768,), float32]" shape=ellipse]
+	153 [label="encoder.layer.9.attention.self.query.weight: Tensor[(768, 768), float32]" shape=ellipse]
+	154 [label="encoder.layer.9.attention.self.query.bias: Tensor[(768,), float32]" shape=ellipse]
+	155 [label="encoder.layer.9.attention.self.key.weight: Tensor[(768, 768), float32]" shape=ellipse]
+	156 [label="encoder.layer.9.attention.self.key.bias: Tensor[(768,), float32]" shape=ellipse]
+	157 [label="encoder.layer.9.attention.self.value.weight: Tensor[(768, 768), float32]" shape=ellipse]
+	158 [label="encoder.layer.9.attention.self.value.bias: Tensor[(768,), float32]" shape=ellipse]
+	159 [label="encoder.layer.9.attention.output.dense.weight: Tensor[(768, 768), float32]" shape=ellipse]
+	160 [label="encoder.layer.9.attention.output.dense.bias: Tensor[(768,), float32]" shape=ellipse]
+	161 [label="encoder.layer.9.attention.output.LayerNorm.weight: Tensor[(768,), float32]" shape=ellipse]
+	162 [label="encoder.layer.9.attention.output.LayerNorm.bias: Tensor[(768,), float32]" shape=ellipse]
+	163 [label="encoder.layer.9.intermediate.dense.weight: Tensor[(3072, 768), float32]" shape=ellipse]
+	164 [label="encoder.layer.9.intermediate.dense.bias: Tensor[(3072,), float32]" shape=ellipse]
+	165 [label="encoder.layer.9.output.dense.weight: Tensor[(768, 3072), float32]" shape=ellipse]
+	166 [label="encoder.layer.9.output.dense.bias: Tensor[(768,), float32]" shape=ellipse]
+	167 [label="encoder.layer.9.output.LayerNorm.weight: Tensor[(768,), float32]" shape=ellipse]
+	168 [label="encoder.layer.9.output.LayerNorm.bias: Tensor[(768,), float32]" shape=ellipse]
+	169 [label="encoder.layer.10.attention.self.query.weight: Tensor[(768, 768), float32]" shape=ellipse]
+	170 [label="encoder.layer.10.attention.self.query.bias: Tensor[(768,), float32]" shape=ellipse]
+	171 [label="encoder.layer.10.attention.self.key.weight: Tensor[(768, 768), float32]" shape=ellipse]
+	172 [label="encoder.layer.10.attention.self.key.bias: Tensor[(768,), float32]" shape=ellipse]
+	173 [label="encoder.layer.10.attention.self.value.weight: Tensor[(768, 768), float32]" shape=ellipse]
+	174 [label="encoder.layer.10.attention.self.value.bias: Tensor[(768,), float32]" shape=ellipse]
+	175 [label="encoder.layer.10.attention.output.dense.weight: Tensor[(768, 768), float32]" shape=ellipse]
+	176 [label="encoder.layer.10.attention.output.dense.bias: Tensor[(768,), float32]" shape=ellipse]
+	177 [label="encoder.layer.10.attention.output.LayerNorm.weight: Tensor[(768,), float32]" shape=ellipse]
+	178 [label="encoder.layer.10.attention.output.LayerNorm.bias: Tensor[(768,), float32]" shape=ellipse]
+	179 [label="encoder.layer.10.intermediate.dense.weight: Tensor[(3072, 768), float32]" shape=ellipse]
+	180 [label="encoder.layer.10.intermediate.dense.bias: Tensor[(3072,), float32]" shape=ellipse]
+	181 [label="encoder.layer.10.output.dense.weight: Tensor[(768, 3072), float32]" shape=ellipse]
+	182 [label="encoder.layer.10.output.dense.bias: Tensor[(768,), float32]" shape=ellipse]
+	183 [label="encoder.layer.10.output.LayerNorm.weight: Tensor[(768,), float32]" shape=ellipse]
+	184 [label="encoder.layer.10.output.LayerNorm.bias: Tensor[(768,), float32]" shape=ellipse]
+	185 [label="encoder.layer.11.attention.self.query.weight: Tensor[(768, 768), float32]" shape=ellipse]
+	186 [label="encoder.layer.11.attention.self.query.bias: Tensor[(768,), float32]" shape=ellipse]
+	187 [label="encoder.layer.11.attention.self.key.weight: Tensor[(768, 768), float32]" shape=ellipse]
+	188 [label="encoder.layer.11.attention.self.key.bias: Tensor[(768,), float32]" shape=ellipse]
+	189 [label="encoder.layer.11.attention.self.value.weight: Tensor[(768, 768), float32]" shape=ellipse]
+	190 [label="encoder.layer.11.attention.self.value.bias: Tensor[(768,), float32]" shape=ellipse]
+	191 [label="encoder.layer.11.attention.output.dense.weight: Tensor[(768, 768), float32]" shape=ellipse]
+	192 [label="encoder.layer.11.attention.output.dense.bias: Tensor[(768,), float32]" shape=ellipse]
+	193 [label="encoder.layer.11.attention.output.LayerNorm.weight: Tensor[(768,), float32]" shape=ellipse]
+	194 [label="encoder.layer.11.attention.output.LayerNorm.bias: Tensor[(768,), float32]" shape=ellipse]
+	195 [label="encoder.layer.11.intermediate.dense.weight: Tensor[(3072, 768), float32]" shape=ellipse]
+	196 [label="encoder.layer.11.intermediate.dense.bias: Tensor[(3072,), float32]" shape=ellipse]
+	197 [label="encoder.layer.11.output.dense.weight: Tensor[(768, 3072), float32]" shape=ellipse]
+	198 [label="encoder.layer.11.output.dense.bias: Tensor[(768,), float32]" shape=ellipse]
+	199 [label="encoder.layer.11.output.LayerNorm.weight: Tensor[(768,), float32]" shape=ellipse]
+	200 [label="encoder.layer.11.output.LayerNorm.bias: Tensor[(768,), float32]" shape=ellipse]
+	201 [label="pooler.dense.weight: Tensor[(768, 768), float32]" shape=ellipse]
+	202 [label="pooler.dense.bias: Tensor[(768,), float32]" shape=ellipse]
+	216 [label="cast(·| dtype=int32)"]
+	0 -> 216
+	217 [label="take(·, ·| batch_dims=0, axis=0, mode=clip)"]
+	2 -> 217
+	216 -> 217
+	220 [label="strided_slice(·| begin=[0, 0], end=[1, 14], strides=[1, 1], slice_mode=end, axes=None)"]
+	4 -> 220
+	221 [label="repeat(·| repeats=1, axis=0)"]
+	220 -> 221
+	222 [label="cast(·| dtype=int32)"]
+	221 -> 222
+	223 [label="take(·, ·| batch_dims=0, axis=0, mode=clip)"]
+	3 -> 223
+	222 -> 223
+	224 [label="add(·, ·)"]
+	217 -> 224
+	223 -> 224
+	225 [label="strided_slice(·| begin=[0, 0], end=[1, 14], strides=[1, 1], slice_mode=end, axes=None)"]
+	6 -> 225
+	226 [label="cast(·| dtype=int32)"]
+	225 -> 226
+	227 [label="take(·, ·| batch_dims=0, axis=0, mode=clip)"]
+	5 -> 227
+	226 -> 227
+	228 [label="add(·, ·)"]
+	224 -> 228
+	227 -> 228
+	229 [label="nn.layer_norm(·, ·, ·| axis=-1, epsilon=1e-12, center=1, scale=1)"]
+	228 -> 229
+	7 -> 229
+	8 -> 229
+	230 [label="nn.dropout(·| rate=0.1)"]
+	229 -> 230
+	231 [label="TupleGetItem(idx=0)"]
+	230 -> 231
+	232 [label="reshape(·| newshape=[-1, 768])"]
+	231 -> 232
+	233 [label="transpose(·| axes=[1, 0])"]
+	9 -> 233
+	234 [label="transpose(·| axes=[1, 0])"]
+	233 -> 234
+	235 [label="nn.dense(·, ·| units=None, out_dtype=)"]
+	232 -> 235
+	234 -> 235
+	236 [label="reshape(·| newshape=[1, 14, 768])"]
+	235 -> 236
+	237 [label="nn.bias_add(·, ·| axis=-1)"]
+	236 -> 237
+	10 -> 237
+	238 [label="reshape(·| newshape=[1, 14, 12, 64])"]
+	237 -> 238
+	239 [label="transpose(·| axes=[0, 2, 1, 3])"]
+	238 -> 239
+	240 [label="reshape(·| newshape=[-1, 14, 64])"]
+	239 -> 240
+	241 [label="transpose(·| axes=[1, 0])"]
+	11 -> 241
+	242 [label="transpose(·| axes=[1, 0])"]
+	241 -> 242
+	243 [label="nn.dense(·, ·| units=None, out_dtype=)"]
+	232 -> 243
+	242 -> 243
+	244 [label="reshape(·| newshape=[1, 14, 768])"]
+	243 -> 244
+	245 [label="nn.bias_add(·, ·| axis=-1)"]
+	244 -> 245
+	12 -> 245
+	246 [label="reshape(·| newshape=[1, 14, 12, 64])"]
+	245 -> 246
+	247 [label="transpose(·| axes=[0, 2, 1, 3])"]
+	246 -> 247
+	248 [label="transpose(·| axes=[0, 1, 3, 2])"]
+	247 -> 248
+	249 [label="transpose(·| axes=[0, 1, 3, 2])"]
+	248 -> 249
+	250 [label="reshape(·| newshape=[-1, 14, 64])"]
+	249 -> 250
+	251 [label="nn.batch_matmul(·, ·| out_dtype=, transpose_a=0, transpose_b=1)"]
+	240 -> 251
+	250 -> 251
+	252 [label="reshape(·| newshape=[1, 12, 14, 14])"]
+	251 -> 252
+	254 [label="divide(·, 8.0)"]
+	252 -> 254
+	259 [label="expand_dims(·| axis=1, num_newaxis=1)"]
+	1 -> 259
+	260 [label="expand_dims(·| axis=2, num_newaxis=1)"]
+	259 -> 260
+	261 [label="cast(·| dtype=float32)"]
+	260 -> 261
+	262 [label="multiply(1.0, ·)"]
+	261 -> 262
+	263 [label="subtract(1.0, ·)"]
+	262 -> 263
+	265 [label="multiply(·, -10000.0)"]
+	263 -> 265
+	266 [label="add(·, ·)"]
+	254 -> 266
+	265 -> 266
+	267 [label="nn.softmax(·| axis=-1)"]
+	266 -> 267
+	268 [label="nn.dropout(·| rate=0.1)"]
+	267 -> 268
+	269 [label="TupleGetItem(idx=0)"]
+	268 -> 269
+	270 [label="reshape(·| newshape=[-1, 14, 14])"]
+	269 -> 270
+	271 [label="transpose(·| axes=[1, 0])"]
+	13 -> 271
+	272 [label="transpose(·| axes=[1, 0])"]
+	271 -> 272
+	273 [label="nn.dense(·, ·| units=None, out_dtype=)"]
+	232 -> 273
+	272 -> 273
+	274 [label="reshape(·| newshape=[1, 14, 768])"]
+	273 -> 274
+	275 [label="nn.bias_add(·, ·| axis=-1)"]
+	274 -> 275
+	14 -> 275
+	276 [label="reshape(·| newshape=[1, 14, 12, 64])"]
+	275 -> 276
+	277 [label="transpose(·| axes=[0, 2, 1, 3])"]
+	276 -> 277
+	278 [label="transpose(·| axes=[0, 1, 3, 2])"]
+	277 -> 278
+	279 [label="reshape(·| newshape=[-1, 64, 14])"]
+	278 -> 279
+	280 [label="nn.batch_matmul(·, ·| out_dtype=, transpose_a=0, transpose_b=1)"]
+	270 -> 280
+	279 -> 280
+	281 [label="reshape(·| newshape=[1, 12, 14, 64])"]
+	280 -> 281
+	282 [label="transpose(·| axes=[0, 2, 1, 3])"]
+	281 -> 282
+	283 [label="reshape(·| newshape=[1, 14, 768])"]
+	282 -> 283
+	284 [label="reshape(·| newshape=[-1, 768])"]
+	283 -> 284
+	285 [label="transpose(·| axes=[1, 0])"]
+	15 -> 285
+	286 [label="transpose(·| axes=[1, 0])"]
+	285 -> 286
+	287 [label="nn.dense(·, ·| units=None, out_dtype=)"]
+	284 -> 287
+	286 -> 287
+	288 [label="reshape(·| newshape=[1, 14, 768])"]
+	287 -> 288
+	289 [label="nn.bias_add(·, ·| axis=-1)"]
+	288 -> 289
+	16 -> 289
+	290 [label="nn.dropout(·| rate=0.1)"]
+	289 -> 290
+	291 [label="TupleGetItem(idx=0)"]
+	290 -> 291
+	292 [label="add(·, ·)"]
+	291 -> 292
+	231 -> 292
+	293 [label="nn.layer_norm(·, ·, ·| axis=-1, epsilon=1e-12, center=1, scale=1)"]
+	292 -> 293
+	17 -> 293
+	18 -> 293
+	294 [label="reshape(·| newshape=[-1, 768])"]
+	293 -> 294
+	295 [label="transpose(·| axes=[1, 0])"]
+	19 -> 295
+	296 [label="transpose(·| axes=[1, 0])"]
+	295 -> 296
+	297 [label="nn.dense(·, ·| units=None, out_dtype=)"]
+	294 -> 297
+	296 -> 297
+	298 [label="reshape(·| newshape=[1, 14, 3072])"]
+	297 -> 298
+	299 [label="nn.bias_add(·, ·| axis=-1)"]
+	298 -> 299
+	20 -> 299
+	303 [label="multiply(·, 0.70710677)"]
+	299 -> 303
+	304 [label="erf(·)"]
+	303 -> 304
+	306 [label="multiply(·, 0.5)"]
+	304 -> 306
+	307 [label="add(0.5, ·)"]
+	306 -> 307
+	308 [label="multiply(·, ·)"]
+	299 -> 308
+	307 -> 308
+	309 [label="reshape(·| newshape=[-1, 3072])"]
+	308 -> 309
+	310 [label="transpose(·| axes=[1, 0])"]
+	21 -> 310
+	311 [label="transpose(·| axes=[1, 0])"]
+	310 -> 311
+	312 [label="nn.dense(·, ·| units=None, out_dtype=)"]
+	309 -> 312
+	311 -> 312
+	313 [label="reshape(·| newshape=[1, 14, 768])"]
+	312 -> 313
+	314 [label="nn.bias_add(·, ·| axis=-1)"]
+	313 -> 314
+	22 -> 314
+	315 [label="nn.dropout(·| rate=0.1)"]
+	314 -> 315
+	316 [label="TupleGetItem(idx=0)"]
+	315 -> 316
+	317 [label="add(·, ·)"]
+	316 -> 317
+	293 -> 317
+	318 [label="nn.layer_norm(·, ·, ·| axis=-1, epsilon=1e-12, center=1, scale=1)"]
+	317 -> 318
+	23 -> 318
+	24 -> 318
+	319 [label="reshape(·| newshape=[-1, 768])"]
+	318 -> 319
+	320 [label="transpose(·| axes=[1, 0])"]
+	25 -> 320
+	321 [label="transpose(·| axes=[1, 0])"]
+	320 -> 321
+	322 [label="nn.dense(·, ·| units=None, out_dtype=)"]
+	319 -> 322
+	321 -> 322
+	323 [label="reshape(·| newshape=[1, 14, 768])"]
+	322 -> 323
+	324 [label="nn.bias_add(·, ·| axis=-1)"]
+	323 -> 324
+	26 -> 324
+	325 [label="reshape(·| newshape=[1, 14, 12, 64])"]
+	324 -> 325
+	326 [label="transpose(·| axes=[0, 2, 1, 3])"]
+	325 -> 326
+	327 [label="reshape(·| newshape=[-1, 14, 64])"]
+	326 -> 327
+	328 [label="transpose(·| axes=[1, 0])"]
+	27 -> 328
+	329 [label="transpose(·| axes=[1, 0])"]
+	328 -> 329
+	330 [label="nn.dense(·, ·| units=None, out_dtype=)"]
+	319 -> 330
+	329 -> 330
+	331 [label="reshape(·| newshape=[1, 14, 768])"]
+	330 -> 331
+	332 [label="nn.bias_add(·, ·| axis=-1)"]
+	331 -> 332
+	28 -> 332
+	333 [label="reshape(·| newshape=[1, 14, 12, 64])"]
+	332 -> 333
+	334 [label="transpose(·| axes=[0, 2, 1, 3])"]
+	333 -> 334
+	335 [label="transpose(·| axes=[0, 1, 3, 2])"]
+	334 -> 335
+	336 [label="transpose(·| axes=[0, 1, 3, 2])"]
+	335 -> 336
+	337 [label="reshape(·| newshape=[-1, 14, 64])"]
+	336 -> 337
+	338 [label="nn.batch_matmul(·, ·| out_dtype=, transpose_a=0, transpose_b=1)"]
+	327 -> 338
+	337 -> 338
+	339 [label="reshape(·| newshape=[1, 12, 14, 14])"]
+	338 -> 339
+	341 [label="divide(·, 8.0)"]
+	339 -> 341
+	342 [label="add(·, ·)"]
+	341 -> 342
+	265 -> 342
+	343 [label="nn.softmax(·| axis=-1)"]
+	342 -> 343
+	344 [label="nn.dropout(·| rate=0.1)"]
+	343 -> 344
+	345 [label="TupleGetItem(idx=0)"]
+	344 -> 345
+	346 [label="reshape(·| newshape=[-1, 14, 14])"]
+	345 -> 346
+	347 [label="transpose(·| axes=[1, 0])"]
+	29 -> 347
+	348 [label="transpose(·| axes=[1, 0])"]
+	347 -> 348
+	349 [label="nn.dense(·, ·| units=None, out_dtype=)"]
+	319 -> 349
+	348 -> 349
+	350 [label="reshape(·| newshape=[1, 14, 768])"]
+	349 -> 350
+	351 [label="nn.bias_add(·, ·| axis=-1)"]
+	350 -> 351
+	30 -> 351
+	352 [label="reshape(·| newshape=[1, 14, 12, 64])"]
+	351 -> 352
+	353 [label="transpose(·| axes=[0, 2, 1, 3])"]
+	352 -> 353
+	354 [label="transpose(·| axes=[0, 1, 3, 2])"]
+	353 -> 354
+	355 [label="reshape(·| newshape=[-1, 64, 14])"]
+	354 -> 355
+	356 [label="nn.batch_matmul(·, ·| out_dtype=, transpose_a=0, transpose_b=1)"]
+	346 -> 356
+	355 -> 356
+	357 [label="reshape(·| newshape=[1, 12, 14, 64])"]
+	356 -> 357
+	358 [label="transpose(·| axes=[0, 2, 1, 3])"]
+	357 -> 358
+	359 [label="reshape(·| newshape=[1, 14, 768])"]
+	358 -> 359
+	360 [label="reshape(·| newshape=[-1, 768])"]
+	359 -> 360
+	361 [label="transpose(·| axes=[1, 0])"]
+	31 -> 361
+	362 [label="transpose(·| axes=[1, 0])"]
+	361 -> 362
+	363 [label="nn.dense(·, ·| units=None, out_dtype=)"]
+	360 -> 363
+	362 -> 363
+	364 [label="reshape(·| newshape=[1, 14, 768])"]
+	363 -> 364
+	365 [label="nn.bias_add(·, ·| axis=-1)"]
+	364 -> 365
+	32 -> 365
+	366 [label="nn.dropout(·| rate=0.1)"]
+	365 -> 366
+	367 [label="TupleGetItem(idx=0)"]
+	366 -> 367
+	368 [label="add(·, ·)"]
+	367 -> 368
+	318 -> 368
+	369 [label="nn.layer_norm(·, ·, ·| axis=-1, epsilon=1e-12, center=1, scale=1)"]
+	368 -> 369
+	33 -> 369
+	34 -> 369
+	370 [label="reshape(·| newshape=[-1, 768])"]
+	369 -> 370
+	371 [label="transpose(·| axes=[1, 0])"]
+	35 -> 371
+	372 [label="transpose(·| axes=[1, 0])"]
+	371 -> 372
+	373 [label="nn.dense(·, ·| units=None, out_dtype=)"]
+	370 -> 373
+	372 -> 373
+	374 [label="reshape(·| newshape=[1, 14, 3072])"]
+	373 -> 374
+	375 [label="nn.bias_add(·, ·| axis=-1)"]
+	374 -> 375
+	36 -> 375
+	378 [label="multiply(·, 0.70710677)"]
+	375 -> 378
+	379 [label="erf(·)"]
+	378 -> 379
+	381 [label="multiply(·, 0.5)"]
+	379 -> 381
+	382 [label="add(0.5, ·)"]
+	381 -> 382
+	383 [label="multiply(·, ·)"]
+	375 -> 383
+	382 -> 383
+	384 [label="reshape(·| newshape=[-1, 3072])"]
+	383 -> 384
+	385 [label="transpose(·| axes=[1, 0])"]
+	37 -> 385
+	386 [label="transpose(·| axes=[1, 0])"]
+	385 -> 386
+	387 [label="nn.dense(·, ·| units=None, out_dtype=)"]
+	384 -> 387
+	386 -> 387
+	388 [label="reshape(·| newshape=[1, 14, 768])"]
+	387 -> 388
+	389 [label="nn.bias_add(·, ·| axis=-1)"]
+	388 -> 389
+	38 -> 389
+	390 [label="nn.dropout(·| rate=0.1)"]
+	389 -> 390
+	391 [label="TupleGetItem(idx=0)"]
+	390 -> 391
+	392 [label="add(·, ·)"]
+	391 -> 392
+	369 -> 392
+	393 [label="nn.layer_norm(·, ·, ·| axis=-1, epsilon=1e-12, center=1, scale=1)"]
+	392 -> 393
+	39 -> 393
+	40 -> 393
+	394 [label="reshape(·| newshape=[-1, 768])"]
+	393 -> 394
+	395 [label="transpose(·| axes=[1, 0])"]
+	41 -> 395
+	396 [label="transpose(·| axes=[1, 0])"]
+	395 -> 396
+	397 [label="nn.dense(·, ·| units=None, out_dtype=)"]
+	394 -> 397
+	396 -> 397
+	398 [label="reshape(·| newshape=[1, 14, 768])"]
+	397 -> 398
+	399 [label="nn.bias_add(·, ·| axis=-1)"]
+	398 -> 399
+	42 -> 399
+	400 [label="reshape(·| newshape=[1, 14, 12, 64])"]
+	399 -> 400
+	401 [label="transpose(·| axes=[0, 2, 1, 3])"]
+	400 -> 401
+	402 [label="reshape(·| newshape=[-1, 14, 64])"]
+	401 -> 402
+	403 [label="transpose(·| axes=[1, 0])"]
+	43 -> 403
+	404 [label="transpose(·| axes=[1, 0])"]
+	403 -> 404
+	405 [label="nn.dense(·, ·| units=None, out_dtype=)"]
+	394 -> 405
+	404 -> 405
+	406 [label="reshape(·| newshape=[1, 14, 768])"]
+	405 -> 406
+	407 [label="nn.bias_add(·, ·| axis=-1)"]
+	406 -> 407
+	44 -> 407
+	408 [label="reshape(·| newshape=[1, 14, 12, 64])"]
+	407 -> 408
+	409 [label="transpose(·| axes=[0, 2, 1, 3])"]
+	408 -> 409
+	410 [label="transpose(·| axes=[0, 1, 3, 2])"]
+	409 -> 410
+	411 [label="transpose(·| axes=[0, 1, 3, 2])"]
+	410 -> 411
+	412 [label="reshape(·| newshape=[-1, 14, 64])"]
+	411 -> 412
+	413 [label="nn.batch_matmul(·, ·| out_dtype=, transpose_a=0, transpose_b=1)"]
+	402 -> 413
+	412 -> 413
+	414 [label="reshape(·| newshape=[1, 12, 14, 14])"]
+	413 -> 414
+	416 [label="divide(·, 8.0)"]
+	414 -> 416
+	417 [label="add(·, ·)"]
+	416 -> 417
+	265 -> 417
+	418 [label="nn.softmax(·| axis=-1)"]
+	417 -> 418
+	419 [label="nn.dropout(·| rate=0.1)"]
+	418 -> 419
+	420 [label="TupleGetItem(idx=0)"]
+	419 -> 420
+	421 [label="reshape(·| newshape=[-1, 14, 14])"]
+	420 -> 421
+	422 [label="transpose(·| axes=[1, 0])"]
+	45 -> 422
+	423 [label="transpose(·| axes=[1, 0])"]
+	422 -> 423
+	424 [label="nn.dense(·, ·| units=None, out_dtype=)"]
+	394 -> 424
+	423 -> 424
+	425 [label="reshape(·| newshape=[1, 14, 768])"]
+	424 -> 425
+	426 [label="nn.bias_add(·, ·| axis=-1)"]
+	425 -> 426
+	46 -> 426
+	427 [label="reshape(·| newshape=[1, 14, 12, 64])"]
+	426 -> 427
+	428 [label="transpose(·| axes=[0, 2, 1, 3])"]
+	427 -> 428
+	429 [label="transpose(·| axes=[0, 1, 3, 2])"]
+	428 -> 429
+	430 [label="reshape(·| newshape=[-1, 64, 14])"]
+	429 -> 430
+	431 [label="nn.batch_matmul(·, ·| out_dtype=, transpose_a=0, transpose_b=1)"]
+	421 -> 431
+	430 -> 431
+	432 [label="reshape(·| newshape=[1, 12, 14, 64])"]
+	431 -> 432
+	433 [label="transpose(·| axes=[0, 2, 1, 3])"]
+	432 -> 433
+	434 [label="reshape(·| newshape=[1, 14, 768])"]
+	433 -> 434
+	435 [label="reshape(·| newshape=[-1, 768])"]
+	434 -> 435
+	436 [label="transpose(·| axes=[1, 0])"]
+	47 -> 436
+	437 [label="transpose(·| axes=[1, 0])"]
+	436 -> 437
+	438 [label="nn.dense(·, ·| units=None, out_dtype=)"]
+	435 -> 438
+	437 -> 438
+	439 [label="reshape(·| newshape=[1, 14, 768])"]
+	438 -> 439
+	440 [label="nn.bias_add(·, ·| axis=-1)"]
+	439 -> 440
+	48 -> 440
+	441 [label="nn.dropout(·| rate=0.1)"]
+	440 -> 441
+	442 [label="TupleGetItem(idx=0)"]
+	441 -> 442
+	443 [label="add(·, ·)"]
+	442 -> 443
+	393 -> 443
+	444 [label="nn.layer_norm(·, ·, ·| axis=-1, epsilon=1e-12, center=1, scale=1)"]
+	443 -> 444
+	49 -> 444
+	50 -> 444
+	445 [label="reshape(·| newshape=[-1, 768])"]
+	444 -> 445
+	446 [label="transpose(·| axes=[1, 0])"]
+	51 -> 446
+	447 [label="transpose(·| axes=[1, 0])"]
+	446 -> 447
+	448 [label="nn.dense(·, ·| units=None, out_dtype=)"]
+	445 -> 448
+	447 -> 448
+	449 [label="reshape(·| newshape=[1, 14, 3072])"]
+	448 -> 449
+	450 [label="nn.bias_add(·, ·| axis=-1)"]
+	449 -> 450
+	52 -> 450
+	453 [label="multiply(·, 0.70710677)"]
+	450 -> 453
+	454 [label="erf(·)"]
+	453 -> 454
+	456 [label="multiply(·, 0.5)"]
+	454 -> 456
+	457 [label="add(0.5, ·)"]
+	456 -> 457
+	458 [label="multiply(·, ·)"]
+	450 -> 458
+	457 -> 458
+	459 [label="reshape(·| newshape=[-1, 3072])"]
+	458 -> 459
+	460 [label="transpose(·| axes=[1, 0])"]
+	53 -> 460
+	461 [label="transpose(·| axes=[1, 0])"]
+	460 -> 461
+	462 [label="nn.dense(·, ·| units=None, out_dtype=)"]
+	459 -> 462
+	461 -> 462
+	463 [label="reshape(·| newshape=[1, 14, 768])"]
+	462 -> 463
+	464 [label="nn.bias_add(·, ·| axis=-1)"]
+	463 -> 464
+	54 -> 464
+	465 [label="nn.dropout(·| rate=0.1)"]
+	464 -> 465
+	466 [label="TupleGetItem(idx=0)"]
+	465 -> 466
+	467 [label="add(·, ·)"]
+	466 -> 467
+	444 -> 467
+	468 [label="nn.layer_norm(·, ·, ·| axis=-1, epsilon=1e-12, center=1, scale=1)"]
+	467 -> 468
+	55 -> 468
+	56 -> 468
+	469 [label="reshape(·| newshape=[-1, 768])"]
+	468 -> 469
+	470 [label="transpose(·| axes=[1, 0])"]
+	57 -> 470
+	471 [label="transpose(·| axes=[1, 0])"]
+	470 -> 471
+	472 [label="nn.dense(·, ·| units=None, out_dtype=)"]
+	469 -> 472
+	471 -> 472
+	473 [label="reshape(·| newshape=[1, 14, 768])"]
+	472 -> 473
+	474 [label="nn.bias_add(·, ·| axis=-1)"]
+	473 -> 474
+	58 -> 474
+	475 [label="reshape(·| newshape=[1, 14, 12, 64])"]
+	474 -> 475
+	476 [label="transpose(·| axes=[0, 2, 1, 3])"]
+	475 -> 476
+	477 [label="reshape(·| newshape=[-1, 14, 64])"]
+	476 -> 477
+	478 [label="transpose(·| axes=[1, 0])"]
+	59 -> 478
+	479 [label="transpose(·| axes=[1, 0])"]
+	478 -> 479
+	480 [label="nn.dense(·, ·| units=None, out_dtype=)"]
+	469 -> 480
+	479 -> 480
+	481 [label="reshape(·| newshape=[1, 14, 768])"]
+	480 -> 481
+	482 [label="nn.bias_add(·, ·| axis=-1)"]
+	481 -> 482
+	60 -> 482
+	483 [label="reshape(·| newshape=[1, 14, 12, 64])"]
+	482 -> 483
+	484 [label="transpose(·| axes=[0, 2, 1, 3])"]
+	483 -> 484
+	485 [label="transpose(·| axes=[0, 1, 3, 2])"]
+	484 -> 485
+	486 [label="transpose(·| axes=[0, 1, 3, 2])"]
+	485 -> 486
+	487 [label="reshape(·| newshape=[-1, 14, 64])"]
+	486 -> 487
+	488 [label="nn.batch_matmul(·, ·| out_dtype=, transpose_a=0, transpose_b=1)"]
+	477 -> 488
+	487 -> 488
+	489 [label="reshape(·| newshape=[1, 12, 14, 14])"]
+	488 -> 489
+	491 [label="divide(·, 8.0)"]
+	489 -> 491
+	492 [label="add(·, ·)"]
+	491 -> 492
+	265 -> 492
+	493 [label="nn.softmax(·| axis=-1)"]
+	492 -> 493
+	494 [label="nn.dropout(·| rate=0.1)"]
+	493 -> 494
+	495 [label="TupleGetItem(idx=0)"]
+	494 -> 495
+	496 [label="reshape(·| newshape=[-1, 14, 14])"]
+	495 -> 496
+	497 [label="transpose(·| axes=[1, 0])"]
+	61 -> 497
+	498 [label="transpose(·| axes=[1, 0])"]
+	497 -> 498
+	499 [label="nn.dense(·, ·| units=None, out_dtype=)"]
+	469 -> 499
+	498 -> 499
+	500 [label="reshape(·| newshape=[1, 14, 768])"]
+	499 -> 500
+	501 [label="nn.bias_add(·, ·| axis=-1)"]
+	500 -> 501
+	62 -> 501
+	502 [label="reshape(·| newshape=[1, 14, 12, 64])"]
+	501 -> 502
+	503 [label="transpose(·| axes=[0, 2, 1, 3])"]
+	502 -> 503
+	504 [label="transpose(·| axes=[0, 1, 3, 2])"]
+	503 -> 504
+	505 [label="reshape(·| newshape=[-1, 64, 14])"]
+	504 -> 505
+	506 [label="nn.batch_matmul(·, ·| out_dtype=, transpose_a=0, transpose_b=1)"]
+	496 -> 506
+	505 -> 506
+	507 [label="reshape(·| newshape=[1, 12, 14, 64])"]
+	506 -> 507
+	508 [label="transpose(·| axes=[0, 2, 1, 3])"]
+	507 -> 508
+	509 [label="reshape(·| newshape=[1, 14, 768])"]
+	508 -> 509
+	510 [label="reshape(·| newshape=[-1, 768])"]
+	509 -> 510
+	511 [label="transpose(·| axes=[1, 0])"]
+	63 -> 511
+	512 [label="transpose(·| axes=[1, 0])"]
+	511 -> 512
+	513 [label="nn.dense(·, ·| units=None, out_dtype=)"]
+	510 -> 513
+	512 -> 513
+	514 [label="reshape(·| newshape=[1, 14, 768])"]
+	513 -> 514
+	515 [label="nn.bias_add(·, ·| axis=-1)"]
+	514 -> 515
+	64 -> 515
+	516 [label="nn.dropout(·| rate=0.1)"]
+	515 -> 516
+	517 [label="TupleGetItem(idx=0)"]
+	516 -> 517
+	518 [label="add(·, ·)"]
+	517 -> 518
+	468 -> 518
+	519 [label="nn.layer_norm(·, ·, ·| axis=-1, epsilon=1e-12, center=1, scale=1)"]
+	518 -> 519
+	65 -> 519
+	66 -> 519
+	520 [label="reshape(·| newshape=[-1, 768])"]
+	519 -> 520
+	521 [label="transpose(·| axes=[1, 0])"]
+	67 -> 521
+	522 [label="transpose(·| axes=[1, 0])"]
+	521 -> 522
+	523 [label="nn.dense(·, ·| units=None, out_dtype=)"]
+	520 -> 523
+	522 -> 523
+	524 [label="reshape(·| newshape=[1, 14, 3072])"]
+	523 -> 524
+	525 [label="nn.bias_add(·, ·| axis=-1)"]
+	524 -> 525
+	68 -> 525
+	528 [label="multiply(·, 0.70710677)"]
+	525 -> 528
+	529 [label="erf(·)"]
+	528 -> 529
+	531 [label="multiply(·, 0.5)"]
+	529 -> 531
+	532 [label="add(0.5, ·)"]
+	531 -> 532
+	533 [label="multiply(·, ·)"]
+	525 -> 533
+	532 -> 533
+	534 [label="reshape(·| newshape=[-1, 3072])"]
+	533 -> 534
+	535 [label="transpose(·| axes=[1, 0])"]
+	69 -> 535
+	536 [label="transpose(·| axes=[1, 0])"]
+	535 -> 536
+	537 [label="nn.dense(·, ·| units=None, out_dtype=)"]
+	534 -> 537
+	536 -> 537
+	538 [label="reshape(·| newshape=[1, 14, 768])"]
+	537 -> 538
+	539 [label="nn.bias_add(·, ·| axis=-1)"]
+	538 -> 539
+	70 -> 539
+	540 [label="nn.dropout(·| rate=0.1)"]
+	539 -> 540
+	541 [label="TupleGetItem(idx=0)"]
+	540 -> 541
+	542 [label="add(·, ·)"]
+	541 -> 542
+	519 -> 542
+	543 [label="nn.layer_norm(·, ·, ·| axis=-1, epsilon=1e-12, center=1, scale=1)"]
+	542 -> 543
+	71 -> 543
+	72 -> 543
+	544 [label="reshape(·| newshape=[-1, 768])"]
+	543 -> 544
+	545 [label="transpose(·| axes=[1, 0])"]
+	73 -> 545
+	546 [label="transpose(·| axes=[1, 0])"]
+	545 -> 546
+	547 [label="nn.dense(·, ·| units=None, out_dtype=)"]
+	544 -> 547
+	546 -> 547
+	548 [label="reshape(·| newshape=[1, 14, 768])"]
+	547 -> 548
+	549 [label="nn.bias_add(·, ·| axis=-1)"]
+	548 -> 549
+	74 -> 549
+	550 [label="reshape(·| newshape=[1, 14, 12, 64])"]
+	549 -> 550
+	551 [label="transpose(·| axes=[0, 2, 1, 3])"]
+	550 -> 551
+	552 [label="reshape(·| newshape=[-1, 14, 64])"]
+	551 -> 552
+	553 [label="transpose(·| axes=[1, 0])"]
+	75 -> 553
+	554 [label="transpose(·| axes=[1, 0])"]
+	553 -> 554
+	555 [label="nn.dense(·, ·| units=None, out_dtype=)"]
+	544 -> 555
+	554 -> 555
+	556 [label="reshape(·| newshape=[1, 14, 768])"]
+	555 -> 556
+	557 [label="nn.bias_add(·, ·| axis=-1)"]
+	556 -> 557
+	76 -> 557
+	558 [label="reshape(·| newshape=[1, 14, 12, 64])"]
+	557 -> 558
+	559 [label="transpose(·| axes=[0, 2, 1, 3])"]
+	558 -> 559
+	560 [label="transpose(·| axes=[0, 1, 3, 2])"]
+	559 -> 560
+	561 [label="transpose(·| axes=[0, 1, 3, 2])"]
+	560 -> 561
+	562 [label="reshape(·| newshape=[-1, 14, 64])"]
+	561 -> 562
+	563 [label="nn.batch_matmul(·, ·| out_dtype=, transpose_a=0, transpose_b=1)"]
+	552 -> 563
+	562 -> 563
+	564 [label="reshape(·| newshape=[1, 12, 14, 14])"]
+	563 -> 564
+	566 [label="divide(·, 8.0)"]
+	564 -> 566
+	567 [label="add(·, ·)"]
+	566 -> 567
+	265 -> 567
+	568 [label="nn.softmax(·| axis=-1)"]
+	567 -> 568
+	569 [label="nn.dropout(·| rate=0.1)"]
+	568 -> 569
+	570 [label="TupleGetItem(idx=0)"]
+	569 -> 570
+	571 [label="reshape(·| newshape=[-1, 14, 14])"]
+	570 -> 571
+	572 [label="transpose(·| axes=[1, 0])"]
+	77 -> 572
+	573 [label="transpose(·| axes=[1, 0])"]
+	572 -> 573
+	574 [label="nn.dense(·, ·| units=None, out_dtype=)"]
+	544 -> 574
+	573 -> 574
+	575 [label="reshape(·| newshape=[1, 14, 768])"]
+	574 -> 575
+	576 [label="nn.bias_add(·, ·| axis=-1)"]
+	575 -> 576
+	78 -> 576
+	577 [label="reshape(·| newshape=[1, 14, 12, 64])"]
+	576 -> 577
+	578 [label="transpose(·| axes=[0, 2, 1, 3])"]
+	577 -> 578
+	579 [label="transpose(·| axes=[0, 1, 3, 2])"]
+	578 -> 579
+	580 [label="reshape(·| newshape=[-1, 64, 14])"]
+	579 -> 580
+	581 [label="nn.batch_matmul(·, ·| out_dtype=, transpose_a=0, transpose_b=1)"]
+	571 -> 581
+	580 -> 581
+	582 [label="reshape(·| newshape=[1, 12, 14, 64])"]
+	581 -> 582
+	583 [label="transpose(·| axes=[0, 2, 1, 3])"]
+	582 -> 583
+	584 [label="reshape(·| newshape=[1, 14, 768])"]
+	583 -> 584
+	585 [label="reshape(·| newshape=[-1, 768])"]
+	584 -> 585
+	586 [label="transpose(·| axes=[1, 0])"]
+	79 -> 586
+	587 [label="transpose(·| axes=[1, 0])"]
+	586 -> 587
+	588 [label="nn.dense(·, ·| units=None, out_dtype=)"]
+	585 -> 588
+	587 -> 588
+	589 [label="reshape(·| newshape=[1, 14, 768])"]
+	588 -> 589
+	590 [label="nn.bias_add(·, ·| axis=-1)"]
+	589 -> 590
+	80 -> 590
+	591 [label="nn.dropout(·| rate=0.1)"]
+	590 -> 591
+	592 [label="TupleGetItem(idx=0)"]
+	591 -> 592
+	593 [label="add(·, ·)"]
+	592 -> 593
+	543 -> 593
+	594 [label="nn.layer_norm(·, ·, ·| axis=-1, epsilon=1e-12, center=1, scale=1)"]
+	593 -> 594
+	81 -> 594
+	82 -> 594
+	595 [label="reshape(·| newshape=[-1, 768])"]
+	594 -> 595
+	596 [label="transpose(·| axes=[1, 0])"]
+	83 -> 596
+	597 [label="transpose(·| axes=[1, 0])"]
+	596 -> 597
+	598 [label="nn.dense(·, ·| units=None, out_dtype=)"]
+	595 -> 598
+	597 -> 598
+	599 [label="reshape(·| newshape=[1, 14, 3072])"]
+	598 -> 599
+	600 [label="nn.bias_add(·, ·| axis=-1)"]
+	599 -> 600
+	84 -> 600
+	603 [label="multiply(·, 0.70710677)"]
+	600 -> 603
+	604 [label="erf(·)"]
+	603 -> 604
+	606 [label="multiply(·, 0.5)"]
+	604 -> 606
+	607 [label="add(0.5, ·)"]
+	606 -> 607
+	608 [label="multiply(·, ·)"]
+	600 -> 608
+	607 -> 608
+	609 [label="reshape(·| newshape=[-1, 3072])"]
+	608 -> 609
+	610 [label="transpose(·| axes=[1, 0])"]
+	85 -> 610
+	611 [label="transpose(·| axes=[1, 0])"]
+	610 -> 611
+	612 [label="nn.dense(·, ·| units=None, out_dtype=)"]
+	609 -> 612
+	611 -> 612
+	613 [label="reshape(·| newshape=[1, 14, 768])"]
+	612 -> 613
+	614 [label="nn.bias_add(·, ·| axis=-1)"]
+	613 -> 614
+	86 -> 614
+	615 [label="nn.dropout(·| rate=0.1)"]
+	614 -> 615
+	616 [label="TupleGetItem(idx=0)"]
+	615 -> 616
+	617 [label="add(·, ·)"]
+	616 -> 617
+	594 -> 617
+	618 [label="nn.layer_norm(·, ·, ·| axis=-1, epsilon=1e-12, center=1, scale=1)"]
+	617 -> 618
+	87 -> 618
+	88 -> 618
+	619 [label="reshape(·| newshape=[-1, 768])"]
+	618 -> 619
+	620 [label="transpose(·| axes=[1, 0])"]
+	89 -> 620
+	621 [label="transpose(·| axes=[1, 0])"]
+	620 -> 621
+	622 [label="nn.dense(·, ·| units=None, out_dtype=)"]
+	619 -> 622
+	621 -> 622
+	623 [label="reshape(·| newshape=[1, 14, 768])"]
+	622 -> 623
+	624 [label="nn.bias_add(·, ·| axis=-1)"]
+	623 -> 624
+	90 -> 624
+	625 [label="reshape(·| newshape=[1, 14, 12, 64])"]
+	624 -> 625
+	626 [label="transpose(·| axes=[0, 2, 1, 3])"]
+	625 -> 626
+	627 [label="reshape(·| newshape=[-1, 14, 64])"]
+	626 -> 627
+	628 [label="transpose(·| axes=[1, 0])"]
+	91 -> 628
+	629 [label="transpose(·| axes=[1, 0])"]
+	628 -> 629
+	630 [label="nn.dense(·, ·| units=None, out_dtype=)"]
+	619 -> 630
+	629 -> 630
+	631 [label="reshape(·| newshape=[1, 14, 768])"]
+	630 -> 631
+	632 [label="nn.bias_add(·, ·| axis=-1)"]
+	631 -> 632
+	92 -> 632
+	633 [label="reshape(·| newshape=[1, 14, 12, 64])"]
+	632 -> 633
+	634 [label="transpose(·| axes=[0, 2, 1, 3])"]
+	633 -> 634
+	635 [label="transpose(·| axes=[0, 1, 3, 2])"]
+	634 -> 635
+	636 [label="transpose(·| axes=[0, 1, 3, 2])"]
+	635 -> 636
+	637 [label="reshape(·| newshape=[-1, 14, 64])"]
+	636 -> 637
+	638 [label="nn.batch_matmul(·, ·| out_dtype=, transpose_a=0, transpose_b=1)"]
+	627 -> 638
+	637 -> 638
+	639 [label="reshape(·| newshape=[1, 12, 14, 14])"]
+	638 -> 639
+	641 [label="divide(·, 8.0)"]
+	639 -> 641
+	642 [label="add(·, ·)"]
+	641 -> 642
+	265 -> 642
+	643 [label="nn.softmax(·| axis=-1)"]
+	642 -> 643
+	644 [label="nn.dropout(·| rate=0.1)"]
+	643 -> 644
+	645 [label="TupleGetItem(idx=0)"]
+	644 -> 645
+	646 [label="reshape(·| newshape=[-1, 14, 14])"]
+	645 -> 646
+	647 [label="transpose(·| axes=[1, 0])"]
+	93 -> 647
+	648 [label="transpose(·| axes=[1, 0])"]
+	647 -> 648
+	649 [label="nn.dense(·, ·| units=None, out_dtype=)"]
+	619 -> 649
+	648 -> 649
+	650 [label="reshape(·| newshape=[1, 14, 768])"]
+	649 -> 650
+	651 [label="nn.bias_add(·, ·| axis=-1)"]
+	650 -> 651
+	94 -> 651
+	652 [label="reshape(·| newshape=[1, 14, 12, 64])"]
+	651 -> 652
+	653 [label="transpose(·| axes=[0, 2, 1, 3])"]
+	652 -> 653
+	654 [label="transpose(·| axes=[0, 1, 3, 2])"]
+	653 -> 654
+	655 [label="reshape(·| newshape=[-1, 64, 14])"]
+	654 -> 655
+	656 [label="nn.batch_matmul(·, ·| out_dtype=, transpose_a=0, transpose_b=1)"]
+	646 -> 656
+	655 -> 656
+	657 [label="reshape(·| newshape=[1, 12, 14, 64])"]
+	656 -> 657
+	658 [label="transpose(·| axes=[0, 2, 1, 3])"]
+	657 -> 658
+	659 [label="reshape(·| newshape=[1, 14, 768])"]
+	658 -> 659
+	660 [label="reshape(·| newshape=[-1, 768])"]
+	659 -> 660
+	661 [label="transpose(·| axes=[1, 0])"]
+	95 -> 661
+	662 [label="transpose(·| axes=[1, 0])"]
+	661 -> 662
+	663 [label="nn.dense(·, ·| units=None, out_dtype=)"]
+	660 -> 663
+	662 -> 663
+	664 [label="reshape(·| newshape=[1, 14, 768])"]
+	663 -> 664
+	665 [label="nn.bias_add(·, ·| axis=-1)"]
+	664 -> 665
+	96 -> 665
+	666 [label="nn.dropout(·| rate=0.1)"]
+	665 -> 666
+	667 [label="TupleGetItem(idx=0)"]
+	666 -> 667
+	668 [label="add(·, ·)"]
+	667 -> 668
+	618 -> 668
+	669 [label="nn.layer_norm(·, ·, ·| axis=-1, epsilon=1e-12, center=1, scale=1)"]
+	668 -> 669
+	97 -> 669
+	98 -> 669
+	670 [label="reshape(·| newshape=[-1, 768])"]
+	669 -> 670
+	671 [label="transpose(·| axes=[1, 0])"]
+	99 -> 671
+	672 [label="transpose(·| axes=[1, 0])"]
+	671 -> 672
+	673 [label="nn.dense(·, ·| units=None, out_dtype=)"]
+	670 -> 673
+	672 -> 673
+	674 [label="reshape(·| newshape=[1, 14, 3072])"]
+	673 -> 674
+	675 [label="nn.bias_add(·, ·| axis=-1)"]
+	674 -> 675
+	100 -> 675
+	678 [label="multiply(·, 0.70710677)"]
+	675 -> 678
+	679 [label="erf(·)"]
+	678 -> 679
+	681 [label="multiply(·, 0.5)"]
+	679 -> 681
+	682 [label="add(0.5, ·)"]
+	681 -> 682
+	683 [label="multiply(·, ·)"]
+	675 -> 683
+	682 -> 683
+	684 [label="reshape(·| newshape=[-1, 3072])"]
+	683 -> 684
+	685 [label="transpose(·| axes=[1, 0])"]
+	101 -> 685
+	686 [label="transpose(·| axes=[1, 0])"]
+	685 -> 686
+	687 [label="nn.dense(·, ·| units=None, out_dtype=)"]
+	684 -> 687
+	686 -> 687
+	688 [label="reshape(·| newshape=[1, 14, 768])"]
+	687 -> 688
+	689 [label="nn.bias_add(·, ·| axis=-1)"]
+	688 -> 689
+	102 -> 689
+	690 [label="nn.dropout(·| rate=0.1)"]
+	689 -> 690
+	691 [label="TupleGetItem(idx=0)"]
+	690 -> 691
+	692 [label="add(·, ·)"]
+	691 -> 692
+	669 -> 692
+	693 [label="nn.layer_norm(·, ·, ·| axis=-1, epsilon=1e-12, center=1, scale=1)"]
+	692 -> 693
+	103 -> 693
+	104 -> 693
+	694 [label="reshape(·| newshape=[-1, 768])"]
+	693 -> 694
+	695 [label="transpose(·| axes=[1, 0])"]
+	105 -> 695
+	696 [label="transpose(·| axes=[1, 0])"]
+	695 -> 696
+	697 [label="nn.dense(·, ·| units=None, out_dtype=)"]
+	694 -> 697
+	696 -> 697
+	698 [label="reshape(·| newshape=[1, 14, 768])"]
+	697 -> 698
+	699 [label="nn.bias_add(·, ·| axis=-1)"]
+	698 -> 699
+	106 -> 699
+	700 [label="reshape(·| newshape=[1, 14, 12, 64])"]
+	699 -> 700
+	701 [label="transpose(·| axes=[0, 2, 1, 3])"]
+	700 -> 701
+	702 [label="reshape(·| newshape=[-1, 14, 64])"]
+	701 -> 702
+	703 [label="transpose(·| axes=[1, 0])"]
+	107 -> 703
+	704 [label="transpose(·| axes=[1, 0])"]
+	703 -> 704
+	705 [label="nn.dense(·, ·| units=None, out_dtype=)"]
+	694 -> 705
+	704 -> 705
+	706 [label="reshape(·| newshape=[1, 14, 768])"]
+	705 -> 706
+	707 [label="nn.bias_add(·, ·| axis=-1)"]
+	706 -> 707
+	108 -> 707
+	708 [label="reshape(·| newshape=[1, 14, 12, 64])"]
+	707 -> 708
+	709 [label="transpose(·| axes=[0, 2, 1, 3])"]
+	708 -> 709
+	710 [label="transpose(·| axes=[0, 1, 3, 2])"]
+	709 -> 710
+	711 [label="transpose(·| axes=[0, 1, 3, 2])"]
+	710 -> 711
+	712 [label="reshape(·| newshape=[-1, 14, 64])"]
+	711 -> 712
+	713 [label="nn.batch_matmul(·, ·| out_dtype=, transpose_a=0, transpose_b=1)"]
+	702 -> 713
+	712 -> 713
+	714 [label="reshape(·| newshape=[1, 12, 14, 14])"]
+	713 -> 714
+	716 [label="divide(·, 8.0)"]
+	714 -> 716
+	717 [label="add(·, ·)"]
+	716 -> 717
+	265 -> 717
+	718 [label="nn.softmax(·| axis=-1)"]
+	717 -> 718
+	719 [label="nn.dropout(·| rate=0.1)"]
+	718 -> 719
+	720 [label="TupleGetItem(idx=0)"]
+	719 -> 720
+	721 [label="reshape(·| newshape=[-1, 14, 14])"]
+	720 -> 721
+	722 [label="transpose(·| axes=[1, 0])"]
+	109 -> 722
+	723 [label="transpose(·| axes=[1, 0])"]
+	722 -> 723
+	724 [label="nn.dense(·, ·| units=None, out_dtype=)"]
+	694 -> 724
+	723 -> 724
+	725 [label="reshape(·| newshape=[1, 14, 768])"]
+	724 -> 725
+	726 [label="nn.bias_add(·, ·| axis=-1)"]
+	725 -> 726
+	110 -> 726
+	727 [label="reshape(·| newshape=[1, 14, 12, 64])"]
+	726 -> 727
+	728 [label="transpose(·| axes=[0, 2, 1, 3])"]
+	727 -> 728
+	729 [label="transpose(·| axes=[0, 1, 3, 2])"]
+	728 -> 729
+	730 [label="reshape(·| newshape=[-1, 64, 14])"]
+	729 -> 730
+	731 [label="nn.batch_matmul(·, ·| out_dtype=, transpose_a=0, transpose_b=1)"]
+	721 -> 731
+	730 -> 731
+	732 [label="reshape(·| newshape=[1, 12, 14, 64])"]
+	731 -> 732
+	733 [label="transpose(·| axes=[0, 2, 1, 3])"]
+	732 -> 733
+	734 [label="reshape(·| newshape=[1, 14, 768])"]
+	733 -> 734
+	735 [label="reshape(·| newshape=[-1, 768])"]
+	734 -> 735
+	736 [label="transpose(·| axes=[1, 0])"]
+	111 -> 736
+	737 [label="transpose(·| axes=[1, 0])"]
+	736 -> 737
+	738 [label="nn.dense(·, ·| units=None, out_dtype=)"]
+	735 -> 738
+	737 -> 738
+	739 [label="reshape(·| newshape=[1, 14, 768])"]
+	738 -> 739
+	740 [label="nn.bias_add(·, ·| axis=-1)"]
+	739 -> 740
+	112 -> 740
+	741 [label="nn.dropout(·| rate=0.1)"]
+	740 -> 741
+	742 [label="TupleGetItem(idx=0)"]
+	741 -> 742
+	743 [label="add(·, ·)"]
+	742 -> 743
+	693 -> 743
+	744 [label="nn.layer_norm(·, ·, ·| axis=-1, epsilon=1e-12, center=1, scale=1)"]
+	743 -> 744
+	113 -> 744
+	114 -> 744
+	745 [label="reshape(·| newshape=[-1, 768])"]
+	744 -> 745
+	746 [label="transpose(·| axes=[1, 0])"]
+	115 -> 746
+	747 [label="transpose(·| axes=[1, 0])"]
+	746 -> 747
+	748 [label="nn.dense(·, ·| units=None, out_dtype=)"]
+	745 -> 748
+	747 -> 748
+	749 [label="reshape(·| newshape=[1, 14, 3072])"]
+	748 -> 749
+	750 [label="nn.bias_add(·, ·| axis=-1)"]
+	749 -> 750
+	116 -> 750
+	753 [label="multiply(·, 0.70710677)"]
+	750 -> 753
+	754 [label="erf(·)"]
+	753 -> 754
+	756 [label="multiply(·, 0.5)"]
+	754 -> 756
+	757 [label="add(0.5, ·)"]
+	756 -> 757
+	758 [label="multiply(·, ·)"]
+	750 -> 758
+	757 -> 758
+	759 [label="reshape(·| newshape=[-1, 3072])"]
+	758 -> 759
+	760 [label="transpose(·| axes=[1, 0])"]
+	117 -> 760
+	761 [label="transpose(·| axes=[1, 0])"]
+	760 -> 761
+	762 [label="nn.dense(·, ·| units=None, out_dtype=)"]
+	759 -> 762
+	761 -> 762
+	763 [label="reshape(·| newshape=[1, 14, 768])"]
+	762 -> 763
+	764 [label="nn.bias_add(·, ·| axis=-1)"]
+	763 -> 764
+	118 -> 764
+	765 [label="nn.dropout(·| rate=0.1)"]
+	764 -> 765
+	766 [label="TupleGetItem(idx=0)"]
+	765 -> 766
+	767 [label="add(·, ·)"]
+	766 -> 767
+	744 -> 767
+	768 [label="nn.layer_norm(·, ·, ·| axis=-1, epsilon=1e-12, center=1, scale=1)"]
+	767 -> 768
+	119 -> 768
+	120 -> 768
+	769 [label="reshape(·| newshape=[-1, 768])"]
+	768 -> 769
+	770 [label="transpose(·| axes=[1, 0])"]
+	121 -> 770
+	771 [label="transpose(·| axes=[1, 0])"]
+	770 -> 771
+	772 [label="nn.dense(·, ·| units=None, out_dtype=)"]
+	769 -> 772
+	771 -> 772
+	773 [label="reshape(·| newshape=[1, 14, 768])"]
+	772 -> 773
+	774 [label="nn.bias_add(·, ·| axis=-1)"]
+	773 -> 774
+	122 -> 774
+	775 [label="reshape(·| newshape=[1, 14, 12, 64])"]
+	774 -> 775
+	776 [label="transpose(·| axes=[0, 2, 1, 3])"]
+	775 -> 776
+	777 [label="reshape(·| newshape=[-1, 14, 64])"]
+	776 -> 777
+	778 [label="transpose(·| axes=[1, 0])"]
+	123 -> 778
+	779 [label="transpose(·| axes=[1, 0])"]
+	778 -> 779
+	780 [label="nn.dense(·, ·| units=None, out_dtype=)"]
+	769 -> 780
+	779 -> 780
+	781 [label="reshape(·| newshape=[1, 14, 768])"]
+	780 -> 781
+	782 [label="nn.bias_add(·, ·| axis=-1)"]
+	781 -> 782
+	124 -> 782
+	783 [label="reshape(·| newshape=[1, 14, 12, 64])"]
+	782 -> 783
+	784 [label="transpose(·| axes=[0, 2, 1, 3])"]
+	783 -> 784
+	785 [label="transpose(·| axes=[0, 1, 3, 2])"]
+	784 -> 785
+	786 [label="transpose(·| axes=[0, 1, 3, 2])"]
+	785 -> 786
+	787 [label="reshape(·| newshape=[-1, 14, 64])"]
+	786 -> 787
+	788 [label="nn.batch_matmul(·, ·| out_dtype=, transpose_a=0, transpose_b=1)"]
+	777 -> 788
+	787 -> 788
+	789 [label="reshape(·| newshape=[1, 12, 14, 14])"]
+	788 -> 789
+	791 [label="divide(·, 8.0)"]
+	789 -> 791
+	792 [label="add(·, ·)"]
+	791 -> 792
+	265 -> 792
+	793 [label="nn.softmax(·| axis=-1)"]
+	792 -> 793
+	794 [label="nn.dropout(·| rate=0.1)"]
+	793 -> 794
+	795 [label="TupleGetItem(idx=0)"]
+	794 -> 795
+	796 [label="reshape(·| newshape=[-1, 14, 14])"]
+	795 -> 796
+	797 [label="transpose(·| axes=[1, 0])"]
+	125 -> 797
+	798 [label="transpose(·| axes=[1, 0])"]
+	797 -> 798
+	799 [label="nn.dense(·, ·| units=None, out_dtype=)"]
+	769 -> 799
+	798 -> 799
+	800 [label="reshape(·| newshape=[1, 14, 768])"]
+	799 -> 800
+	801 [label="nn.bias_add(·, ·| axis=-1)"]
+	800 -> 801
+	126 -> 801
+	802 [label="reshape(·| newshape=[1, 14, 12, 64])"]
+	801 -> 802
+	803 [label="transpose(·| axes=[0, 2, 1, 3])"]
+	802 -> 803
+	804 [label="transpose(·| axes=[0, 1, 3, 2])"]
+	803 -> 804
+	805 [label="reshape(·| newshape=[-1, 64, 14])"]
+	804 -> 805
+	806 [label="nn.batch_matmul(·, ·| out_dtype=, transpose_a=0, transpose_b=1)"]
+	796 -> 806
+	805 -> 806
+	807 [label="reshape(·| newshape=[1, 12, 14, 64])"]
+	806 -> 807
+	808 [label="transpose(·| axes=[0, 2, 1, 3])"]
+	807 -> 808
+	809 [label="reshape(·| newshape=[1, 14, 768])"]
+	808 -> 809
+	810 [label="reshape(·| newshape=[-1, 768])"]
+	809 -> 810
+	811 [label="transpose(·| axes=[1, 0])"]
+	127 -> 811
+	812 [label="transpose(·| axes=[1, 0])"]
+	811 -> 812
+	813 [label="nn.dense(·, ·| units=None, out_dtype=)"]
+	810 -> 813
+	812 -> 813
+	814 [label="reshape(·| newshape=[1, 14, 768])"]
+	813 -> 814
+	815 [label="nn.bias_add(·, ·| axis=-1)"]
+	814 -> 815
+	128 -> 815
+	816 [label="nn.dropout(·| rate=0.1)"]
+	815 -> 816
+	817 [label="TupleGetItem(idx=0)"]
+	816 -> 817
+	818 [label="add(·, ·)"]
+	817 -> 818
+	768 -> 818
+	819 [label="nn.layer_norm(·, ·, ·| axis=-1, epsilon=1e-12, center=1, scale=1)"]
+	818 -> 819
+	129 -> 819
+	130 -> 819
+	820 [label="reshape(·| newshape=[-1, 768])"]
+	819 -> 820
+	821 [label="transpose(·| axes=[1, 0])"]
+	131 -> 821
+	822 [label="transpose(·| axes=[1, 0])"]
+	821 -> 822
+	823 [label="nn.dense(·, ·| units=None, out_dtype=)"]
+	820 -> 823
+	822 -> 823
+	824 [label="reshape(·| newshape=[1, 14, 3072])"]
+	823 -> 824
+	825 [label="nn.bias_add(·, ·| axis=-1)"]
+	824 -> 825
+	132 -> 825
+	828 [label="multiply(·, 0.70710677)"]
+	825 -> 828
+	829 [label="erf(·)"]
+	828 -> 829
+	831 [label="multiply(·, 0.5)"]
+	829 -> 831
+	832 [label="add(0.5, ·)"]
+	831 -> 832
+	833 [label="multiply(·, ·)"]
+	825 -> 833
+	832 -> 833
+	834 [label="reshape(·| newshape=[-1, 3072])"]
+	833 -> 834
+	835 [label="transpose(·| axes=[1, 0])"]
+	133 -> 835
+	836 [label="transpose(·| axes=[1, 0])"]
+	835 -> 836
+	837 [label="nn.dense(·, ·| units=None, out_dtype=)"]
+	834 -> 837
+	836 -> 837
+	838 [label="reshape(·| newshape=[1, 14, 768])"]
+	837 -> 838
+	839 [label="nn.bias_add(·, ·| axis=-1)"]
+	838 -> 839
+	134 -> 839
+	840 [label="nn.dropout(·| rate=0.1)"]
+	839 -> 840
+	841 [label="TupleGetItem(idx=0)"]
+	840 -> 841
+	842 [label="add(·, ·)"]
+	841 -> 842
+	819 -> 842
+	843 [label="nn.layer_norm(·, ·, ·| axis=-1, epsilon=1e-12, center=1, scale=1)"]
+	842 -> 843
+	135 -> 843
+	136 -> 843
+	844 [label="reshape(·| newshape=[-1, 768])"]
+	843 -> 844
+	845 [label="transpose(·| axes=[1, 0])"]
+	137 -> 845
+	846 [label="transpose(·| axes=[1, 0])"]
+	845 -> 846
+	847 [label="nn.dense(·, ·| units=None, out_dtype=)"]
+	844 -> 847
+	846 -> 847
+	848 [label="reshape(·| newshape=[1, 14, 768])"]
+	847 -> 848
+	849 [label="nn.bias_add(·, ·| axis=-1)"]
+	848 -> 849
+	138 -> 849
+	850 [label="reshape(·| newshape=[1, 14, 12, 64])"]
+	849 -> 850
+	851 [label="transpose(·| axes=[0, 2, 1, 3])"]
+	850 -> 851
+	852 [label="reshape(·| newshape=[-1, 14, 64])"]
+	851 -> 852
+	853 [label="transpose(·| axes=[1, 0])"]
+	139 -> 853
+	854 [label="transpose(·| axes=[1, 0])"]
+	853 -> 854
+	855 [label="nn.dense(·, ·| units=None, out_dtype=)"]
+	844 -> 855
+	854 -> 855
+	856 [label="reshape(·| newshape=[1, 14, 768])"]
+	855 -> 856
+	857 [label="nn.bias_add(·, ·| axis=-1)"]
+	856 -> 857
+	140 -> 857
+	858 [label="reshape(·| newshape=[1, 14, 12, 64])"]
+	857 -> 858
+	859 [label="transpose(·| axes=[0, 2, 1, 3])"]
+	858 -> 859
+	860 [label="transpose(·| axes=[0, 1, 3, 2])"]
+	859 -> 860
+	861 [label="transpose(·| axes=[0, 1, 3, 2])"]
+	860 -> 861
+	862 [label="reshape(·| newshape=[-1, 14, 64])"]
+	861 -> 862
+	863 [label="nn.batch_matmul(·, ·| out_dtype=, transpose_a=0, transpose_b=1)"]
+	852 -> 863
+	862 -> 863
+	864 [label="reshape(·| newshape=[1, 12, 14, 14])"]
+	863 -> 864
+	866 [label="divide(·, 8.0)"]
+	864 -> 866
+	867 [label="add(·, ·)"]
+	866 -> 867
+	265 -> 867
+	868 [label="nn.softmax(·| axis=-1)"]
+	867 -> 868
+	869 [label="nn.dropout(·| rate=0.1)"]
+	868 -> 869
+	870 [label="TupleGetItem(idx=0)"]
+	869 -> 870
+	871 [label="reshape(·| newshape=[-1, 14, 14])"]
+	870 -> 871
+	872 [label="transpose(·| axes=[1, 0])"]
+	141 -> 872
+	873 [label="transpose(·| axes=[1, 0])"]
+	872 -> 873
+	874 [label="nn.dense(·, ·| units=None, out_dtype=)"]
+	844 -> 874
+	873 -> 874
+	875 [label="reshape(·| newshape=[1, 14, 768])"]
+	874 -> 875
+	876 [label="nn.bias_add(·, ·| axis=-1)"]
+	875 -> 876
+	142 -> 876
+	877 [label="reshape(·| newshape=[1, 14, 12, 64])"]
+	876 -> 877
+	878 [label="transpose(·| axes=[0, 2, 1, 3])"]
+	877 -> 878
+	879 [label="transpose(·| axes=[0, 1, 3, 2])"]
+	878 -> 879
+	880 [label="reshape(·| newshape=[-1, 64, 14])"]
+	879 -> 880
+	881 [label="nn.batch_matmul(·, ·| out_dtype=, transpose_a=0, transpose_b=1)"]
+	871 -> 881
+	880 -> 881
+	882 [label="reshape(·| newshape=[1, 12, 14, 64])"]
+	881 -> 882
+	883 [label="transpose(·| axes=[0, 2, 1, 3])"]
+	882 -> 883
+	884 [label="reshape(·| newshape=[1, 14, 768])"]
+	883 -> 884
+	885 [label="reshape(·| newshape=[-1, 768])"]
+	884 -> 885
+	886 [label="transpose(·| axes=[1, 0])"]
+	143 -> 886
+	887 [label="transpose(·| axes=[1, 0])"]
+	886 -> 887
+	888 [label="nn.dense(·, ·| units=None, out_dtype=)"]
+	885 -> 888
+	887 -> 888
+	889 [label="reshape(·| newshape=[1, 14, 768])"]
+	888 -> 889
+	890 [label="nn.bias_add(·, ·| axis=-1)"]
+	889 -> 890
+	144 -> 890
+	891 [label="nn.dropout(·| rate=0.1)"]
+	890 -> 891
+	892 [label="TupleGetItem(idx=0)"]
+	891 -> 892
+	893 [label="add(·, ·)"]
+	892 -> 893
+	843 -> 893
+	894 [label="nn.layer_norm(·, ·, ·| axis=-1, epsilon=1e-12, center=1, scale=1)"]
+	893 -> 894
+	145 -> 894
+	146 -> 894
+	895 [label="reshape(·| newshape=[-1, 768])"]
+	894 -> 895
+	896 [label="transpose(·| axes=[1, 0])"]
+	147 -> 896
+	897 [label="transpose(·| axes=[1, 0])"]
+	896 -> 897
+	898 [label="nn.dense(·, ·| units=None, out_dtype=)"]
+	895 -> 898
+	897 -> 898
+	899 [label="reshape(·| newshape=[1, 14, 3072])"]
+	898 -> 899
+	900 [label="nn.bias_add(·, ·| axis=-1)"]
+	899 -> 900
+	148 -> 900
+	903 [label="multiply(·, 0.70710677)"]
+	900 -> 903
+	904 [label="erf(·)"]
+	903 -> 904
+	906 [label="multiply(·, 0.5)"]
+	904 -> 906
+	907 [label="add(0.5, ·)"]
+	906 -> 907
+	908 [label="multiply(·, ·)"]
+	900 -> 908
+	907 -> 908
+	909 [label="reshape(·| newshape=[-1, 3072])"]
+	908 -> 909
+	910 [label="transpose(·| axes=[1, 0])"]
+	149 -> 910
+	911 [label="transpose(·| axes=[1, 0])"]
+	910 -> 911
+	912 [label="nn.dense(·, ·| units=None, out_dtype=)"]
+	909 -> 912
+	911 -> 912
+	913 [label="reshape(·| newshape=[1, 14, 768])"]
+	912 -> 913
+	914 [label="nn.bias_add(·, ·| axis=-1)"]
+	913 -> 914
+	150 -> 914
+	915 [label="nn.dropout(·| rate=0.1)"]
+	914 -> 915
+	916 [label="TupleGetItem(idx=0)"]
+	915 -> 916
+	917 [label="add(·, ·)"]
+	916 -> 917
+	894 -> 917
+	918 [label="nn.layer_norm(·, ·, ·| axis=-1, epsilon=1e-12, center=1, scale=1)"]
+	917 -> 918
+	151 -> 918
+	152 -> 918
+	919 [label="reshape(·| newshape=[-1, 768])"]
+	918 -> 919
+	920 [label="transpose(·| axes=[1, 0])"]
+	153 -> 920
+	921 [label="transpose(·| axes=[1, 0])"]
+	920 -> 921
+	922 [label="nn.dense(·, ·| units=None, out_dtype=)"]
+	919 -> 922
+	921 -> 922
+	923 [label="reshape(·| newshape=[1, 14, 768])"]
+	922 -> 923
+	924 [label="nn.bias_add(·, ·| axis=-1)"]
+	923 -> 924
+	154 -> 924
+	925 [label="reshape(·| newshape=[1, 14, 12, 64])"]
+	924 -> 925
+	926 [label="transpose(·| axes=[0, 2, 1, 3])"]
+	925 -> 926
+	927 [label="reshape(·| newshape=[-1, 14, 64])"]
+	926 -> 927
+	928 [label="transpose(·| axes=[1, 0])"]
+	155 -> 928
+	929 [label="transpose(·| axes=[1, 0])"]
+	928 -> 929
+	930 [label="nn.dense(·, ·| units=None, out_dtype=)"]
+	919 -> 930
+	929 -> 930
+	931 [label="reshape(·| newshape=[1, 14, 768])"]
+	930 -> 931
+	932 [label="nn.bias_add(·, ·| axis=-1)"]
+	931 -> 932
+	156 -> 932
+	933 [label="reshape(·| newshape=[1, 14, 12, 64])"]
+	932 -> 933
+	934 [label="transpose(·| axes=[0, 2, 1, 3])"]
+	933 -> 934
+	935 [label="transpose(·| axes=[0, 1, 3, 2])"]
+	934 -> 935
+	936 [label="transpose(·| axes=[0, 1, 3, 2])"]
+	935 -> 936
+	937 [label="reshape(·| newshape=[-1, 14, 64])"]
+	936 -> 937
+	938 [label="nn.batch_matmul(·, ·| out_dtype=, transpose_a=0, transpose_b=1)"]
+	927 -> 938
+	937 -> 938
+	939 [label="reshape(·| newshape=[1, 12, 14, 14])"]
+	938 -> 939
+	941 [label="divide(·, 8.0)"]
+	939 -> 941
+	942 [label="add(·, ·)"]
+	941 -> 942
+	265 -> 942
+	943 [label="nn.softmax(·| axis=-1)"]
+	942 -> 943
+	944 [label="nn.dropout(·| rate=0.1)"]
+	943 -> 944
+	945 [label="TupleGetItem(idx=0)"]
+	944 -> 945
+	946 [label="reshape(·| newshape=[-1, 14, 14])"]
+	945 -> 946
+	947 [label="transpose(·| axes=[1, 0])"]
+	157 -> 947
+	948 [label="transpose(·| axes=[1, 0])"]
+	947 -> 948
+	949 [label="nn.dense(·, ·| units=None, out_dtype=)"]
+	919 -> 949
+	948 -> 949
+	950 [label="reshape(·| newshape=[1, 14, 768])"]
+	949 -> 950
+	951 [label="nn.bias_add(·, ·| axis=-1)"]
+	950 -> 951
+	158 -> 951
+	952 [label="reshape(·| newshape=[1, 14, 12, 64])"]
+	951 -> 952
+	953 [label="transpose(·| axes=[0, 2, 1, 3])"]
+	952 -> 953
+	954 [label="transpose(·| axes=[0, 1, 3, 2])"]
+	953 -> 954
+	955 [label="reshape(·| newshape=[-1, 64, 14])"]
+	954 -> 955
+	956 [label="nn.batch_matmul(·, ·| out_dtype=, transpose_a=0, transpose_b=1)"]
+	946 -> 956
+	955 -> 956
+	957 [label="reshape(·| newshape=[1, 12, 14, 64])"]
+	956 -> 957
+	958 [label="transpose(·| axes=[0, 2, 1, 3])"]
+	957 -> 958
+	959 [label="reshape(·| newshape=[1, 14, 768])"]
+	958 -> 959
+	960 [label="reshape(·| newshape=[-1, 768])"]
+	959 -> 960
+	961 [label="transpose(·| axes=[1, 0])"]
+	159 -> 961
+	962 [label="transpose(·| axes=[1, 0])"]
+	961 -> 962
+	963 [label="nn.dense(·, ·| units=None, out_dtype=)"]
+	960 -> 963
+	962 -> 963
+	964 [label="reshape(·| newshape=[1, 14, 768])"]
+	963 -> 964
+	965 [label="nn.bias_add(·, ·| axis=-1)"]
+	964 -> 965
+	160 -> 965
+	966 [label="nn.dropout(·| rate=0.1)"]
+	965 -> 966
+	967 [label="TupleGetItem(idx=0)"]
+	966 -> 967
+	968 [label="add(·, ·)"]
+	967 -> 968
+	918 -> 968
+	969 [label="nn.layer_norm(·, ·, ·| axis=-1, epsilon=1e-12, center=1, scale=1)"]
+	968 -> 969
+	161 -> 969
+	162 -> 969
+	970 [label="reshape(·| newshape=[-1, 768])"]
+	969 -> 970
+	971 [label="transpose(·| axes=[1, 0])"]
+	163 -> 971
+	972 [label="transpose(·| axes=[1, 0])"]
+	971 -> 972
+	973 [label="nn.dense(·, ·| units=None, out_dtype=)"]
+	970 -> 973
+	972 -> 973
+	974 [label="reshape(·| newshape=[1, 14, 3072])"]
+	973 -> 974
+	975 [label="nn.bias_add(·, ·| axis=-1)"]
+	974 -> 975
+	164 -> 975
+	978 [label="multiply(·, 0.70710677)"]
+	975 -> 978
+	979 [label="erf(·)"]
+	978 -> 979
+	981 [label="multiply(·, 0.5)"]
+	979 -> 981
+	982 [label="add(0.5, ·)"]
+	981 -> 982
+	983 [label="multiply(·, ·)"]
+	975 -> 983
+	982 -> 983
+	984 [label="reshape(·| newshape=[-1, 3072])"]
+	983 -> 984
+	985 [label="transpose(·| axes=[1, 0])"]
+	165 -> 985
+	986 [label="transpose(·| axes=[1, 0])"]
+	985 -> 986
+	987 [label="nn.dense(·, ·| units=None, out_dtype=)"]
+	984 -> 987
+	986 -> 987
+	988 [label="reshape(·| newshape=[1, 14, 768])"]
+	987 -> 988
+	989 [label="nn.bias_add(·, ·| axis=-1)"]
+	988 -> 989
+	166 -> 989
+	990 [label="nn.dropout(·| rate=0.1)"]
+	989 -> 990
+	991 [label="TupleGetItem(idx=0)"]
+	990 -> 991
+	992 [label="add(·, ·)"]
+	991 -> 992
+	969 -> 992
+	993 [label="nn.layer_norm(·, ·, ·| axis=-1, epsilon=1e-12, center=1, scale=1)"]
+	992 -> 993
+	167 -> 993
+	168 -> 993
+	994 [label="reshape(·| newshape=[-1, 768])"]
+	993 -> 994
+	995 [label="transpose(·| axes=[1, 0])"]
+	169 -> 995
+	996 [label="transpose(·| axes=[1, 0])"]
+	995 -> 996
+	997 [label="nn.dense(·, ·| units=None, out_dtype=)"]
+	994 -> 997
+	996 -> 997
+	998 [label="reshape(·| newshape=[1, 14, 768])"]
+	997 -> 998
+	999 [label="nn.bias_add(·, ·| axis=-1)"]
+	998 -> 999
+	170 -> 999
+	1000 [label="reshape(·| newshape=[1, 14, 12, 64])"]
+	999 -> 1000
+	1001 [label="transpose(·| axes=[0, 2, 1, 3])"]
+	1000 -> 1001
+	1002 [label="reshape(·| newshape=[-1, 14, 64])"]
+	1001 -> 1002
+	1003 [label="transpose(·| axes=[1, 0])"]
+	171 -> 1003
+	1004 [label="transpose(·| axes=[1, 0])"]
+	1003 -> 1004
+	1005 [label="nn.dense(·, ·| units=None, out_dtype=)"]
+	994 -> 1005
+	1004 -> 1005
+	1006 [label="reshape(·| newshape=[1, 14, 768])"]
+	1005 -> 1006
+	1007 [label="nn.bias_add(·, ·| axis=-1)"]
+	1006 -> 1007
+	172 -> 1007
+	1008 [label="reshape(·| newshape=[1, 14, 12, 64])"]
+	1007 -> 1008
+	1009 [label="transpose(·| axes=[0, 2, 1, 3])"]
+	1008 -> 1009
+	1010 [label="transpose(·| axes=[0, 1, 3, 2])"]
+	1009 -> 1010
+	1011 [label="transpose(·| axes=[0, 1, 3, 2])"]
+	1010 -> 1011
+	1012 [label="reshape(·| newshape=[-1, 14, 64])"]
+	1011 -> 1012
+	1013 [label="nn.batch_matmul(·, ·| out_dtype=, transpose_a=0, transpose_b=1)"]
+	1002 -> 1013
+	1012 -> 1013
+	1014 [label="reshape(·| newshape=[1, 12, 14, 14])"]
+	1013 -> 1014
+	1016 [label="divide(·, 8.0)"]
+	1014 -> 1016
+	1017 [label="add(·, ·)"]
+	1016 -> 1017
+	265 -> 1017
+	1018 [label="nn.softmax(·| axis=-1)"]
+	1017 -> 1018
+	1019 [label="nn.dropout(·| rate=0.1)"]
+	1018 -> 1019
+	1020 [label="TupleGetItem(idx=0)"]
+	1019 -> 1020
+	1021 [label="reshape(·| newshape=[-1, 14, 14])"]
+	1020 -> 1021
+	1022 [label="transpose(·| axes=[1, 0])"]
+	173 -> 1022
+	1023 [label="transpose(·| axes=[1, 0])"]
+	1022 -> 1023
+	1024 [label="nn.dense(·, ·| units=None, out_dtype=)"]
+	994 -> 1024
+	1023 -> 1024
+	1025 [label="reshape(·| newshape=[1, 14, 768])"]
+	1024 -> 1025
+	1026 [label="nn.bias_add(·, ·| axis=-1)"]
+	1025 -> 1026
+	174 -> 1026
+	1027 [label="reshape(·| newshape=[1, 14, 12, 64])"]
+	1026 -> 1027
+	1028 [label="transpose(·| axes=[0, 2, 1, 3])"]
+	1027 -> 1028
+	1029 [label="transpose(·| axes=[0, 1, 3, 2])"]
+	1028 -> 1029
+	1030 [label="reshape(·| newshape=[-1, 64, 14])"]
+	1029 -> 1030
+	1031 [label="nn.batch_matmul(·, ·| out_dtype=, transpose_a=0, transpose_b=1)"]
+	1021 -> 1031
+	1030 -> 1031
+	1032 [label="reshape(·| newshape=[1, 12, 14, 64])"]
+	1031 -> 1032
+	1033 [label="transpose(·| axes=[0, 2, 1, 3])"]
+	1032 -> 1033
+	1034 [label="reshape(·| newshape=[1, 14, 768])"]
+	1033 -> 1034
+	1035 [label="reshape(·| newshape=[-1, 768])"]
+	1034 -> 1035
+	1036 [label="transpose(·| axes=[1, 0])"]
+	175 -> 1036
+	1037 [label="transpose(·| axes=[1, 0])"]
+	1036 -> 1037
+	1038 [label="nn.dense(·, ·| units=None, out_dtype=)"]
+	1035 -> 1038
+	1037 -> 1038
+	1039 [label="reshape(·| newshape=[1, 14, 768])"]
+	1038 -> 1039
+	1040 [label="nn.bias_add(·, ·| axis=-1)"]
+	1039 -> 1040
+	176 -> 1040
+	1041 [label="nn.dropout(·| rate=0.1)"]
+	1040 -> 1041
+	1042 [label="TupleGetItem(idx=0)"]
+	1041 -> 1042
+	1043 [label="add(·, ·)"]
+	1042 -> 1043
+	993 -> 1043
+	1044 [label="nn.layer_norm(·, ·, ·| axis=-1, epsilon=1e-12, center=1, scale=1)"]
+	1043 -> 1044
+	177 -> 1044
+	178 -> 1044
+	1045 [label="reshape(·| newshape=[-1, 768])"]
+	1044 -> 1045
+	1046 [label="transpose(·| axes=[1, 0])"]
+	179 -> 1046
+	1047 [label="transpose(·| axes=[1, 0])"]
+	1046 -> 1047
+	1048 [label="nn.dense(·, ·| units=None, out_dtype=)"]
+	1045 -> 1048
+	1047 -> 1048
+	1049 [label="reshape(·| newshape=[1, 14, 3072])"]
+	1048 -> 1049
+	1050 [label="nn.bias_add(·, ·| axis=-1)"]
+	1049 -> 1050
+	180 -> 1050
+	1053 [label="multiply(·, 0.70710677)"]
+	1050 -> 1053
+	1054 [label="erf(·)"]
+	1053 -> 1054
+	1056 [label="multiply(·, 0.5)"]
+	1054 -> 1056
+	1057 [label="add(0.5, ·)"]
+	1056 -> 1057
+	1058 [label="multiply(·, ·)"]
+	1050 -> 1058
+	1057 -> 1058
+	1059 [label="reshape(·| newshape=[-1, 3072])"]
+	1058 -> 1059
+	1060 [label="transpose(·| axes=[1, 0])"]
+	181 -> 1060
+	1061 [label="transpose(·| axes=[1, 0])"]
+	1060 -> 1061
+	1062 [label="nn.dense(·, ·| units=None, out_dtype=)"]
+	1059 -> 1062
+	1061 -> 1062
+	1063 [label="reshape(·| newshape=[1, 14, 768])"]
+	1062 -> 1063
+	1064 [label="nn.bias_add(·, ·| axis=-1)"]
+	1063 -> 1064
+	182 -> 1064
+	1065 [label="nn.dropout(·| rate=0.1)"]
+	1064 -> 1065
+	1066 [label="TupleGetItem(idx=0)"]
+	1065 -> 1066
+	1067 [label="add(·, ·)"]
+	1066 -> 1067
+	1044 -> 1067
+	1068 [label="nn.layer_norm(·, ·, ·| axis=-1, epsilon=1e-12, center=1, scale=1)"]
+	1067 -> 1068
+	183 -> 1068
+	184 -> 1068
+	1069 [label="reshape(·| newshape=[-1, 768])"]
+	1068 -> 1069
+	1070 [label="transpose(·| axes=[1, 0])"]
+	185 -> 1070
+	1071 [label="transpose(·| axes=[1, 0])"]
+	1070 -> 1071
+	1072 [label="nn.dense(·, ·| units=None, out_dtype=)"]
+	1069 -> 1072
+	1071 -> 1072
+	1073 [label="reshape(·| newshape=[1, 14, 768])"]
+	1072 -> 1073
+	1074 [label="nn.bias_add(·, ·| axis=-1)"]
+	1073 -> 1074
+	186 -> 1074
+	1075 [label="reshape(·| newshape=[1, 14, 12, 64])"]
+	1074 -> 1075
+	1076 [label="transpose(·| axes=[0, 2, 1, 3])"]
+	1075 -> 1076
+	1077 [label="reshape(·| newshape=[-1, 14, 64])"]
+	1076 -> 1077
+	1078 [label="transpose(·| axes=[1, 0])"]
+	187 -> 1078
+	1079 [label="transpose(·| axes=[1, 0])"]
+	1078 -> 1079
+	1080 [label="nn.dense(·, ·| units=None, out_dtype=)"]
+	1069 -> 1080
+	1079 -> 1080
+	1081 [label="reshape(·| newshape=[1, 14, 768])"]
+	1080 -> 1081
+	1082 [label="nn.bias_add(·, ·| axis=-1)"]
+	1081 -> 1082
+	188 -> 1082
+	1083 [label="reshape(·| newshape=[1, 14, 12, 64])"]
+	1082 -> 1083
+	1084 [label="transpose(·| axes=[0, 2, 1, 3])"]
+	1083 -> 1084
+	1085 [label="transpose(·| axes=[0, 1, 3, 2])"]
+	1084 -> 1085
+	1086 [label="transpose(·| axes=[0, 1, 3, 2])"]
+	1085 -> 1086
+	1087 [label="reshape(·| newshape=[-1, 14, 64])"]
+	1086 -> 1087
+	1088 [label="nn.batch_matmul(·, ·| out_dtype=, transpose_a=0, transpose_b=1)"]
+	1077 -> 1088
+	1087 -> 1088
+	1089 [label="reshape(·| newshape=[1, 12, 14, 14])"]
+	1088 -> 1089
+	1091 [label="divide(·, 8.0)"]
+	1089 -> 1091
+	1092 [label="add(·, ·)"]
+	1091 -> 1092
+	265 -> 1092
+	1093 [label="nn.softmax(·| axis=-1)"]
+	1092 -> 1093
+	1094 [label="nn.dropout(·| rate=0.1)"]
+	1093 -> 1094
+	1095 [label="TupleGetItem(idx=0)"]
+	1094 -> 1095
+	1096 [label="reshape(·| newshape=[-1, 14, 14])"]
+	1095 -> 1096
+	1097 [label="transpose(·| axes=[1, 0])"]
+	189 -> 1097
+	1098 [label="transpose(·| axes=[1, 0])"]
+	1097 -> 1098
+	1099 [label="nn.dense(·, ·| units=None, out_dtype=)"]
+	1069 -> 1099
+	1098 -> 1099
+	1100 [label="reshape(·| newshape=[1, 14, 768])"]
+	1099 -> 1100
+	1101 [label="nn.bias_add(·, ·| axis=-1)"]
+	1100 -> 1101
+	190 -> 1101
+	1102 [label="reshape(·| newshape=[1, 14, 12, 64])"]
+	1101 -> 1102
+	1103 [label="transpose(·| axes=[0, 2, 1, 3])"]
+	1102 -> 1103
+	1104 [label="transpose(·| axes=[0, 1, 3, 2])"]
+	1103 -> 1104
+	1105 [label="reshape(·| newshape=[-1, 64, 14])"]
+	1104 -> 1105
+	1106 [label="nn.batch_matmul(·, ·| out_dtype=, transpose_a=0, transpose_b=1)"]
+	1096 -> 1106
+	1105 -> 1106
+	1107 [label="reshape(·| newshape=[1, 12, 14, 64])"]
+	1106 -> 1107
+	1108 [label="transpose(·| axes=[0, 2, 1, 3])"]
+	1107 -> 1108
+	1109 [label="reshape(·| newshape=[1, 14, 768])"]
+	1108 -> 1109
+	1110 [label="reshape(·| newshape=[-1, 768])"]
+	1109 -> 1110
+	1111 [label="transpose(·| axes=[1, 0])"]
+	191 -> 1111
+	1112 [label="transpose(·| axes=[1, 0])"]
+	1111 -> 1112
+	1113 [label="nn.dense(·, ·| units=None, out_dtype=)"]
+	1110 -> 1113
+	1112 -> 1113
+	1114 [label="reshape(·| newshape=[1, 14, 768])"]
+	1113 -> 1114
+	1115 [label="nn.bias_add(·, ·| axis=-1)"]
+	1114 -> 1115
+	192 -> 1115
+	1116 [label="nn.dropout(·| rate=0.1)"]
+	1115 -> 1116
+	1117 [label="TupleGetItem(idx=0)"]
+	1116 -> 1117
+	1118 [label="add(·, ·)"]
+	1117 -> 1118
+	1068 -> 1118
+	1119 [label="nn.layer_norm(·, ·, ·| axis=-1, epsilon=1e-12, center=1, scale=1)"]
+	1118 -> 1119
+	193 -> 1119
+	194 -> 1119
+	1120 [label="reshape(·| newshape=[-1, 768])"]
+	1119 -> 1120
+	1121 [label="transpose(·| axes=[1, 0])"]
+	195 -> 1121
+	1122 [label="transpose(·| axes=[1, 0])"]
+	1121 -> 1122
+	1123 [label="nn.dense(·, ·| units=None, out_dtype=)"]
+	1120 -> 1123
+	1122 -> 1123
+	1124 [label="reshape(·| newshape=[1, 14, 3072])"]
+	1123 -> 1124
+	1125 [label="nn.bias_add(·, ·| axis=-1)"]
+	1124 -> 1125
+	196 -> 1125
+	1128 [label="multiply(·, 0.70710677)"]
+	1125 -> 1128
+	1129 [label="erf(·)"]
+	1128 -> 1129
+	1131 [label="multiply(·, 0.5)"]
+	1129 -> 1131
+	1132 [label="add(0.5, ·)"]
+	1131 -> 1132
+	1133 [label="multiply(·, ·)"]
+	1125 -> 1133
+	1132 -> 1133
+	1134 [label="reshape(·| newshape=[-1, 3072])"]
+	1133 -> 1134
+	1135 [label="transpose(·| axes=[1, 0])"]
+	197 -> 1135
+	1136 [label="transpose(·| axes=[1, 0])"]
+	1135 -> 1136
+	1137 [label="nn.dense(·, ·| units=None, out_dtype=)"]
+	1134 -> 1137
+	1136 -> 1137
+	1138 [label="reshape(·| newshape=[1, 14, 768])"]
+	1137 -> 1138
+	1139 [label="nn.bias_add(·, ·| axis=-1)"]
+	1138 -> 1139
+	198 -> 1139
+	1140 [label="nn.dropout(·| rate=0.1)"]
+	1139 -> 1140
+	1141 [label="TupleGetItem(idx=0)"]
+	1140 -> 1141
+	1142 [label="add(·, ·)"]
+	1141 -> 1142
+	1119 -> 1142
+	1143 [label="nn.layer_norm(·, ·, ·| axis=-1, epsilon=1e-12, center=1, scale=1)"]
+	1142 -> 1143
+	199 -> 1143
+	200 -> 1143
+	1146 [label="take(·, 0| batch_dims=0, axis=1, mode=wrap)"]
+	1143 -> 1146
+	1147 [label="nn.dense(·, ·| units=None, out_dtype=)"]
+	1146 -> 1147
+	201 -> 1147
+	1148 [label="nn.bias_add(·, ·| axis=-1)"]
+	1147 -> 1148
+	202 -> 1148
+	1149 [label="tanh(·)"]
+	1148 -> 1149
+	1150 [label="Tuple[...])"]
+	1143 -> 1150
+	1149 -> 1150
+	1151 [label=Function]
+	1150 -> 1151
+}
