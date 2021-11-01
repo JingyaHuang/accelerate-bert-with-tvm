@@ -31,7 +31,7 @@ Except for handicraft optimizations by pass, TVM offers the possibility to tune 
 
 * Config  
 
-The benchmark I have done was totally on GCP CPU instance due to a lack of ressource, and the demand of GPU will take two days for processing, but I strongly recommend to test it on GPU.
+The benchmark I have done was totally on GCP CPU instance due to a lack of ressource (I only have a free trail and the demand of GPU access on compute engine will take two days to process, OMG), but I strongly recommend to test it on GPU.
 
 	My config:
 	GCP n1-standard-8( 8 Intel Skylake vCPU, 30 GB memory)

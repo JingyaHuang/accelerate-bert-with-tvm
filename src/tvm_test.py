@@ -111,7 +111,7 @@ st_a = tvm.nd.array(segments_tensors.numpy(), ctx)
 # tvm_time = tvm_t1 - tvm_t0
 
 # Auto-tune the schedulers
-# tasks = tvm.autotvm.task.extract_from_program(mod_bert["main"], target=target, params=params)
+tasks = tvm.autotvm.task.extract_from_program(mod_bert["main"], target=target, params=params)
 log_filename = 'bert-tuning.stage1.log'
 
 n_trial = 10  # for real tuning, make this 2000!
@@ -142,17 +142,17 @@ def do_tune(tasks, log_filename):
     # pick best records to a cache file
     tvm.autotvm.record.pick_best(tmp_log_file, log_filename)
 
-# do_tune(tasks, log_filename)
-# relay.backend.te_compiler.get().clear()
+do_tune(tasks, log_filename)
+relay.backend.te_compiler.get().clear()
 
-# # Run tuned-tvm again
-# with tvm.autotvm.apply_history_best(log_filename):
-#     with tvm.transform.PassContext(opt_level=3):
-#         graph, lib, params = relay.build(mod_bert,
-#                                      target=target,
-#                                      target_host=target_host,
-#                                      params=params_bert)
-# module = graph_runtime.create(graph, lib, ctx)
+# Run tuned-tvm again
+with tvm.autotvm.apply_history_best(log_filename):
+    with tvm.transform.PassContext(opt_level=3):
+        graph, lib, params = relay.build(mod_bert,
+                                     target=target,
+                                     target_host=target_host,
+                                     params=params_bert)
+module = graph_runtime.create(graph, lib, ctx)
 
 # module.set_input("input_ids", tt_a)
 # module.set_input("attention_mask", st_a)
